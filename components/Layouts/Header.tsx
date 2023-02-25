@@ -145,29 +145,14 @@ const Header = (props: any) => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/team" className={router.pathname === '/team' ? 'active' : ''}>
-                                        Team
+                                    <Link href="#" className={router.pathname === '/team' ? 'active' : ''}>
+                                        Pricing
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/about-us" className={router.pathname === '/about-us' ? 'active' : ''}>
                                         About Us
                                     </Link>
-                                </li>
-                                <li>
-                                    <Link href="/career" className={router.pathname === '/career' ? 'active' : ''}>
-                                        Career
-                                    </Link>
-                                </li>
-                                <li className="relative hidden items-center before:absolute before:top-1/2 before:h-[30px] before:w-[2px] before:-translate-y-1/2 before:bg-gray/30 ltr:pl-9 ltr:before:-left-[2px] rtl:pr-9 rtl:before:-right-[2px] lg:inline-flex">
-                                    <button type="button" onClick={() => toggleSearch()} className="text-white hover:text-primary">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M18.7363 17.4637L14.6512 13.3785C15.6799 12.0753 16.3 10.4347 16.3 8.65C16.3 4.4317 12.8683 1 8.65 1C4.4317 1 1 4.4317 1 8.65C1 12.8683 4.4317 16.3 8.65 16.3C10.4356 16.3 12.0754 15.6808 13.3786 14.6512L17.4637 18.7363C17.6392 18.9118 17.8696 19 18.1 19C18.3304 19 18.5608 18.9118 18.7363 18.7363C19.0882 18.3844 19.0882 17.8156 18.7363 17.4637ZM2.8 8.65C2.8 5.4244 5.4244 2.8 8.65 2.8C11.8756 2.8 14.5 5.4244 14.5 8.65C14.5 11.8756 11.8756 14.5 8.65 14.5C5.4244 14.5 2.8 11.8756 2.8 8.65Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    </button>
                                 </li>
                                 <li
                                     className={`${showSearch ? '!w-full' : ''}
