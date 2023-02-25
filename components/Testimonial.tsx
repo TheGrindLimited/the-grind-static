@@ -179,8 +179,8 @@ const Testimonial = ({
             )}
             <div className="container">
                 <div className={`heading text-center ltr:lg:text-left rtl:lg:text-right ${showTitle ? '' : 'hidden'}`}>
-                    <h6>Testimonial</h6>
-                    <h4 className="!text-white">Feedback from our clients</h4>
+                    <h6>Collaboration</h6>
+                    <h4 className="!text-white">We are connected with</h4>
                 </div>
                 <div className={`mx-auto ${type.toLowerCase() === 'common' ? 'lg:w-11/12' : ''} `}>
                     <div className="relative sm:py-12 md:py-0">
@@ -333,9 +333,6 @@ const Testimonial = ({
                                 type.toLowerCase() === 'common' && 'ltr:right-1/3 rtl:left-1/3 sm:absolute sm:mt-0 sm:justify-end'
                             } ${type.toLowerCase() === 'modern-saas' && 'ltr:left-0 rtl:right-0 md:absolute md:mt-0 md:justify-end'}`}
                         >
-                            <Link href="#" className="text-sm font-extrabold text-white transition hover:text-secondary dark:hover:text-secondary">
-                                View All
-                            </Link>
                             <button
                                 type="button"
                                 className="testimonial-button-prev static mt-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition after:hidden after:text-[0px] hover:bg-secondary rtl:rotate-180"
