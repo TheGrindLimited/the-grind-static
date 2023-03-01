@@ -10,10 +10,9 @@ const Index = (props: any) => {
     const [activeTab, setActiveTab] = useState<string>('all');
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
 
-    let image_data = props.image_data.data
-    let text_data = props.text_data.data
+    const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider.data)
 
-    console.log(props)
+    console.log(imageData)
 
     return (
         <div className="overflow-x-hidden">
@@ -26,27 +25,16 @@ const Index = (props: any) => {
                         className="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
                     />
                     <div className="container">
-                        <div className="relative bg-[url(/assets/images/world-map.png)] bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
-                            <div className="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2">
+                        <div className="relative bg-[url(/assets/images/world-map.png)] text-white bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
                                 <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px] ">
-                                    Make your <span className="italic text-primary">team</span> <span className="italic text-secondary">work</span> together
+                                    A NEW WAY OF SPORTS TRAINING & COMPETING
                                 </h2>
-                                <p className="my-8 text-lg lg:w-[90%] ">
-                                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate.
+                                <p className="my-8 text-xl lg:w-[90%] ">
+                                    Coming Soon!
                                 </p>
                                 <Link href="/about-us" className="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
                                     read more
                                 </Link>
-                            </div>
-                            <div
-                                className="bottom-0 mx-auto mt-5 mb-2 w-auto ltr:right-0 rtl:left-0 md:w-[540px] lg:absolute lg:mb-0 lg:mt-0 xl:w-[650px]"
-                                data-aos={isRtl ? 'fade-right' : 'fade-left'}
-                                data-aos-duration="1000"
-                                data-aos-offset="0"
-                                data-aos-delay="200"
-                            >
-                                <img src="/assets/images/home-banner-icon.svg" alt="home-banner-icon" className="rtl:rotate-y-180" />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,7 +157,7 @@ const Index = (props: any) => {
                     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 54.69%)',
                 }}
             >
-                <CounterComponent title="Company Facts" />
+                {/*<CounterComponent title="Company Facts" />*/}
                 <div className="relative my-14 mx-auto border-[10px] border-transparent bg-black py-14 dark:border-black dark:bg-gray-dark lg:my-[100px] lg:py-[100px] xl:max-w-[1440px] xl:rounded-3xl">
                     <div className="container">
                         <div className="">
@@ -177,424 +165,36 @@ const Index = (props: any) => {
                                 <h6>Who is it for?</h6>
                                 <h4 className="leading-normal !text-white lg:!leading-[50px]">We bring solutions to make life easier for our customers.</h4>
                             </div>
-                            <div className='flex flex-col md:flex-row justify-around text-xl text-black'>
-                                <div className='flex items-center w-[300px] h-[300px] text-center bg-white justify-center cursor-pointer'>
-                                    For Coaches
+                            <div className='flex flex-col gap-[12rem] md:gap-0 md:flex-row justify-around text-xl text-black py-8'>
+                                <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
+                                    <div className='w-[450px] h-[200px]'>
+                                        <img src={imageData[5].attributes.url} className="w-[450px] h-[300px]"/>
+                                    </div>
+                                    <div className='text-white text-2xl font-bold'>For Coaches</div>
                                 </div>
-                                <div className='flex items-center w-[300px] h-[300px] text-center bg-white justify-center cursor-pointer'>
-                                    For Players
+                                <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
+                                    <div className='w-[450px] h-[200px]'>
+                                        <img src={imageData[6].attributes.url} className="w-[450px] h-[300px]"/>
+                                    </div>
+                                    <div className='text-white text-2xl font-bold'>For Players</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="bg-gradient-to-b from-white/60 to-transparent py-14 dark:from-white/[0.02] lg:py-[100px]">
-                <div className="container">
-                    <div className="heading text-center">
-                        <h6>Pricing Plan</h6>
-                        <h4>Choose Affordable Prices</h4>
-                    </div>
-                    <div className="grid grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3">
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div className="group rounded-3xl border-2 border-primary bg-white p-6 px-4 transition hover:bg-primary hover:drop-shadow-[-10px_30px_70px_rgba(40,38,77,0.25)] dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.01] dark:to-transparent dark:drop-shadow-none dark:hover:border-gray-dark dark:hover:bg-gray-dark sm:px-6">
-                                <div className="mb-8">
-                                    <h3 className="text-[22px] font-black text-black dark:text-white">Intro</h3>
-                                </div>
-                                <ul className="space-y-5 pb-7 text-sm font-bold group-hover:text-white">
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Daily content updates</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Unlimited downloads of FREE resources</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Unlimited PREMIUM downloads</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Valid commercial licenses</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g opacity="0.3">
-                                                    <circle cx="8" cy="8" r="8" fill="#7780A1" />
-                                                </g>
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Advanced Search</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g opacity="0.3">
-                                                    <circle cx="8" cy="8" r="8" fill="#7780A1" />
-                                                </g>
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">No attribution required</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <g opacity="0.3">
-                                                    <circle cx="8" cy="8" r="8" fill="#7780A1" />
-                                                </g>
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Browse with no ads</p>
-                                    </li>
-                                </ul>
-                                <div className="border-t-2 border-[#BBC0D0]/50 pt-7">
-                                    <div className="mb-3 flex flex-col items-center justify-center sm:flex-row sm:justify-between">
-                                        <div className="relative mb-2 text-lg font-extrabold before:absolute before:top-1/2 before:h-2.5 before:w-2.5 before:-translate-y-1/2 before:rounded-full before:bg-primary group-hover:text-white group-hover:before:bg-white ltr:pl-5 ltr:before:left-0 rtl:pr-5 rtl:before:right-0 sm:mb-0">
-                                            Monthly
-                                        </div>
-                                        <Link href="#" className="btn text-xl text-white group-hover:bg-white group-hover:text-primary dark:text-black xl:w-44">
-                                            $39.99
-                                            <small className="text-xs lowercase">/month</small>
-                                        </Link>
-                                    </div>
-                                    <span className="block text-center text-sm font-bold text-black dark:text-white sm:pr-5 ltr:sm:text-right rtl:sm:text-left">
-                                        Billed every month
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div className="group rounded-3xl border-2 border-secondary bg-white p-6 px-4 transition hover:bg-secondary hover:drop-shadow-[-10px_30px_70px_rgba(40,38,77,0.25)] dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.01] dark:to-transparent dark:drop-shadow-none dark:hover:border-gray-dark dark:hover:bg-gray-dark sm:px-6">
-                                <div className="relative mb-8">
-                                    <h3 className="text-[22px] font-black text-black dark:text-white">Base</h3>
-                                    <div className="group-hover:white/10 absolute top-1/2 -translate-y-1/2 rounded-xl bg-secondary/10 py-2 px-4 text-xs font-black text-secondary group-hover:bg-white group-hover:text-black ltr:right-0 rtl:left-0">
-                                        MOST POPULAR
-                                    </div>
-                                </div>
-                                <ul className="space-y-5 pb-7 text-sm font-bold group-hover:text-white">
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Daily content updates</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Unlimited downloads of FREE resources</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Unlimited PREMIUM downloads</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Valid commercial licenses</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Advanced Search</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">No attribution required</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Browse with no ads</p>
-                                    </li>
-                                </ul>
-                                <div className="border-t-2 border-[#BBC0D0]/50 pt-7">
-                                    <div className="mb-3 flex flex-col items-center justify-center sm:flex-row sm:justify-between">
-                                        <div className="relative mb-2 text-lg font-extrabold before:absolute before:top-1/2 before:h-2.5 before:w-2.5 before:-translate-y-1/2 before:rounded-full before:bg-secondary group-hover:text-white group-hover:before:bg-white ltr:pl-5 ltr:before:left-0 rtl:pr-5 rtl:before:right-0 sm:mb-0">
-                                            Yearly
-                                        </div>
-                                        <Link
-                                            href="#"
-                                            className="btn bg-secondary text-xl text-white group-hover:bg-white group-hover:text-secondary dark:text-black xl:w-44"
-                                        >
-                                            $14.99
-                                            <small className="text-xs lowercase">/month</small>
-                                        </Link>
-                                    </div>
-                                    <span className="block text-center text-sm font-bold text-black dark:text-white sm:pr-5 ltr:sm:text-right rtl:sm:text-left">
-                                        $179.00 every 12 months
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <div className="group rounded-3xl border-2 border-black bg-white p-6 px-4 transition hover:bg-black hover:drop-shadow-[-10px_30px_70px_rgba(40,38,77,0.25)] dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.01] dark:to-transparent dark:drop-shadow-none dark:hover:border-gray-dark dark:hover:bg-gray-dark sm:px-6">
-                                <div className="mb-8">
-                                    <h3 className="text-[22px] font-black text-black group-hover:text-white dark:text-white">Pro</h3>
-                                </div>
-                                <ul className="space-y-5 pb-7 text-sm font-bold group-hover:text-white">
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Daily content updates</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Unlimited downloads of FREE resources</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Unlimited PREMIUM downloads</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Valid commercial licenses</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Advanced Search</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">No attribution required</p>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <div>
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="8" cy="8" r="8" fill="#45B649" />
-                                                <path
-                                                    d="M5.11438 8.11438L7 10L10.7712 6.22876"
-                                                    stroke="white"
-                                                    strokeWidth="1.6"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="ltr:pl-3 rtl:pr-3">Browse with no ads</p>
-                                    </li>
-                                </ul>
-                                <div className="border-t-2 border-[#BBC0D0]/50 pt-7">
-                                    <div className="mb-3 flex flex-col items-center justify-center sm:flex-row sm:justify-between">
-                                        <div className="relative mb-2 text-lg font-extrabold before:absolute before:top-1/2 before:h-2.5 before:w-2.5 before:-translate-y-1/2 before:rounded-full before:bg-black group-hover:text-gray group-hover:before:bg-white ltr:pl-5 ltr:before:left-0 rtl:pr-5 rtl:before:right-0 sm:mb-0">
-                                            Yearly
-                                        </div>
-                                        <Link href="#" className="btn bg-black text-xl text-white group-hover:bg-white group-hover:text-black xl:w-44">
-                                            $499
-                                        </Link>
-                                    </div>
-                                    <span className="block text-center text-sm font-bold text-black group-hover:text-white dark:text-white sm:pr-5 ltr:sm:text-right rtl:sm:text-left">
-                                        Billed once only
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <section className='flex flex-col text-center py-14 gap-2'>
+                <div className='heading'>
+                    <h6>Collaboration</h6>
+                    <h4>We are connect with</h4>
+                </div>
+                <div className='flex justify-center gap-16'>
+                    <img src={imageData[0].attributes.url} className="w-[256px]" />
+                    <img src={imageData[1].attributes.url} className="w-[180px]" />
+                    <img src={imageData[2].attributes.url} className="w-[256px]" />
                 </div>
             </section>
-            <Testimonial />
+            {/*<Testimonial />*/}
             <section className="py-14 dark:bg-gray-dark lg:py-[100px]">
                 <div className="container">
                     <div className="relative z-10 lg:flex">
@@ -679,68 +279,6 @@ const Index = (props: any) => {
                                         />
                                     </svg>
                                 </div>
-                                <div className="relative">
-                                    <input
-                                        type="text"
-                                        name="mobile"
-                                        className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
-                                    />
-                                    <label
-                                        htmlFor=""
-                                        className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
-                                    >
-                                        Mobile Number
-                                    </label>
-                                    <svg
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 22 22"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
-                                    >
-                                        <path
-                                            d="M6.45241 1.40806C5.45292 0.783702 4.14202 0.887138 3.2983 1.73086L1.86856 3.1606C-0.302899 5.33207 1.73747 10.8931 6.42586 15.5815C11.1142 20.2699 16.6753 22.3102 18.8467 20.1388L20.2765 18.709C21.2635 17.722 21.2374 16.0956 20.2182 15.0764L18.0036 12.8619C16.9844 11.8426 15.358 11.8165 14.371 12.8036L14.0639 13.1107C13.531 13.6436 12.6713 13.6957 12.0713 13.2005C11.4925 12.7229 10.9159 12.208 10.3576 11.6497C9.79933 11.0914 9.28441 10.5149 8.80678 9.93607C8.31161 9.33601 8.36374 8.47631 8.89666 7.9434L9.20375 7.63631C9.98187 6.85819 10.1303 5.68271 9.65898 4.72062"
-                                            stroke="currentColor"
-                                            strokeWidth="1.8"
-                                            strokeLinecap="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <div className="relative">
-                                    <input
-                                        type="text"
-                                        name="city"
-                                        className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
-                                    />
-                                    <label
-                                        htmlFor=""
-                                        className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
-                                    >
-                                        City
-                                    </label>
-                                    <svg
-                                        width="20"
-                                        height="22"
-                                        viewBox="0 0 20 22"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
-                                    >
-                                        <path
-                                            d="M5.89416 2.31259C7.20149 1.48625 8.75475 1.00732 10.4211 1.00732C15.0719 1.00732 18.8421 4.73828 18.8421 9.34066C18.8421 15.0541 12.1053 21.0073 10.4211 21.0073C8.73684 21.0073 2 15.0541 2 9.34066C2 7.87581 2.38193 6.49924 3.05263 5.30315"
-                                            stroke="currentColor"
-                                            strokeWidth="1.8"
-                                            strokeLinecap="round"
-                                        />
-                                        <path
-                                            d="M13.4571 9.77392C13.5365 9.49702 13.579 9.20456 13.579 8.90216C13.579 7.15811 12.1651 5.74427 10.4211 5.74427C8.67702 5.74427 7.26318 7.15811 7.26318 8.90216C7.26318 10.6462 8.67702 12.0601 10.4211 12.0601C10.6633 12.0601 10.8991 12.0328 11.1256 11.9812"
-                                            stroke="currentColor"
-                                            strokeWidth="1.8"
-                                            strokeLinecap="round"
-                                        />
-                                    </svg>
-                                </div>
                             </div>
                             <div className="relative mt-10">
                                 <input
@@ -775,6 +313,45 @@ const Index = (props: any) => {
                                     Send Message
                                 </button>
                             </div>
+                            <div className='flex flex-col'>
+                                <a className='flex gap-1' href='mailto:info@thegrind-app.com'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                    </svg> info@thegrind-app.com
+                                </a>
+                                <div className='flex gap-4'>
+                                    <a href="https://www.facebook.com/TheGrindapps">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="48" fill="currentColor" className="bi bi-facebook cursor-pointer" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/thegrind_app/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="48" fill="currentColor" className="bi bi-instagram cursor-pointer" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/thegrind-app/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="48" fill="currentColor" className="bi bi-linkedin cursor-pointer" viewBox="0 0 16 16">
+                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div className='flex flex-col py-4'>
+                        <div className='text-xl font-bold'>Get Updates</div>
+                        <div>Get the latest app version, news & updates. Subscribe to our newsletter.</div>
+                        <form className='flex'>
+                            <input
+                                type="text"
+                                name="message"
+                                className="w-full mr-20 rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                placeholder='Email Address*'
+                            />
+                            <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                                Subscribe
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -784,14 +361,11 @@ const Index = (props: any) => {
 };
 
 export async function getStaticProps() {
-  let text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/notices")
-  const text_data = text.data
   let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*")
   const image_data = image.data
 
   return {
     props: {
-      text_data,
       image_data
     }
   }
