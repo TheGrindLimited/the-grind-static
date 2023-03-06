@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Provider store={store}>
             <Suspense>
                 <Head>
-                    <title>Plurk – Tailwind CSS Multipurpose Landing Templates</title>
+                    <title>Sports Coaching App | The Grind | Hong Kong</title>
                     <meta charSet="UTF-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

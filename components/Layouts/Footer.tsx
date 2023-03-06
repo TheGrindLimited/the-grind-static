@@ -7,65 +7,26 @@ const Footer = () => {
                 <div className="container">
                     <div className="grid gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-5">
                         <div className="relative">
-                            <img src="/assets/images/logo.png" alt="plurk" className="h-7 w-auto" />
+                            <div className="text-secondary text-xl font-bold">THE GRIND</div><div className='text-secondary text-sm'>NEVER STOPS</div>
                             <ul className="mt-12 flex items-center gap-8">
                                 <li>
-                                    <Link href="#">
-                                        <svg
-                                            width="10"
-                                            height="20"
-                                            viewBox="0 0 10 20"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="transition hover:scale-110 hover:text-secondary"
-                                        >
-                                            <path
-                                                d="M8.0733 3.29509H9.88498V0.139742C9.57242 0.0967442 8.49748 0 7.2456 0C4.6335 0 2.84415 1.643 2.84415 4.66274V7.44186H-0.0383301V10.9693H2.84415V19.845H6.37821V10.9701H9.1441L9.58317 7.44269H6.37738V5.01251C6.37821 3.99297 6.65273 3.29509 8.0733 3.29509Z"
-                                                fill="currentColor"
-                                            />
+                                    <Link href="https://www.facebook.com/TheGrindapps">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="48" fill="currentColor" className="bi bi-facebook cursor-pointer" viewBox="0 0 16 16">
+                                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                                         </svg>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#">
-                                        <svg
-                                            width="23"
-                                            height="18"
-                                            viewBox="0 0 23 18"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="transition hover:scale-110 hover:text-secondary"
-                                        >
-                                            <path
-                                                d="M22.8849 2.11613C22.0668 2.475 21.1951 2.71288 20.2862 2.82838C21.2212 2.27013 21.9348 1.39287 22.2703 0.3355C21.3986 0.85525 20.4361 1.22238 19.4103 1.42725C18.5826 0.545875 17.4028 0 16.1158 0C13.6188 0 11.6086 2.02675 11.6086 4.51137C11.6086 4.86888 11.6388 5.21263 11.7131 5.53988C7.96345 5.357 4.64557 3.55988 2.4167 0.82225C2.02757 1.49738 1.79932 2.27012 1.79932 3.102C1.79932 4.664 2.6037 6.04862 3.8027 6.85025C3.07807 6.8365 2.3672 6.62613 1.76495 6.29475C1.76495 6.3085 1.76495 6.32638 1.76495 6.34425C1.76495 8.536 3.32832 10.3565 5.37845 10.7759C5.01132 10.8763 4.6112 10.9244 4.19595 10.9244C3.9072 10.9244 3.6157 10.9079 3.34207 10.8474C3.92645 12.6335 5.5847 13.9466 7.55645 13.9893C6.02195 15.1896 4.07357 15.9129 1.96432 15.9129C1.59445 15.9129 1.2397 15.8964 0.884949 15.851C2.88282 17.1394 5.25057 17.875 7.80395 17.875C16.1034 17.875 20.6409 11 20.6409 5.04075C20.6409 4.84137 20.6341 4.64887 20.6244 4.45775C21.5196 3.8225 22.2717 3.02913 22.8849 2.11613Z"
-                                                fill="currentColor"
-                                            />
+                                    <Link href="https://www.instagram.com/thegrind_app/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="48" fill="currentColor" className="bi bi-instagram cursor-pointer" viewBox="0 0 16 16">
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
                                         </svg>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#">
-                                        <svg
-                                            width="23"
-                                            height="22"
-                                            viewBox="0 0 23 22"
-                                            fill="currentColor"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="transition hover:scale-110 hover:text-secondary"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                clipRule="evenodd"
-                                                d="M7.75995 0H16.0099C19.8063 0 22.8849 3.07862 22.8849 6.875V15.125C22.8849 18.9214 19.8063 22 16.0099 22H7.75995C3.96357 22 0.884949 18.9214 0.884949 15.125V6.875C0.884949 3.07862 3.96357 0 7.75995 0ZM16.0099 19.9375C18.6637 19.9375 20.8224 17.7787 20.8224 15.125V6.875C20.8224 4.22125 18.6637 2.0625 16.0099 2.0625H7.75995C5.1062 2.0625 2.94745 4.22125 2.94745 6.875V15.125C2.94745 17.7787 5.1062 19.9375 7.75995 19.9375H16.0099Z"
-                                                fill="currentColor"
-                                            />
-                                            <path
-                                                fillRule="evenodd"
-                                                clipRule="evenodd"
-                                                d="M6.38495 11C6.38495 7.96263 8.84757 5.5 11.8849 5.5C14.9223 5.5 17.3849 7.96263 17.3849 11C17.3849 14.0374 14.9223 16.5 11.8849 16.5C8.84757 16.5 6.38495 14.0374 6.38495 11ZM8.44745 11C8.44745 12.8948 9.9902 14.4375 11.8849 14.4375C13.7797 14.4375 15.3224 12.8948 15.3224 11C15.3224 9.10388 13.7797 7.5625 11.8849 7.5625C9.9902 7.5625 8.44745 9.10388 8.44745 11Z"
-                                                fill="currentColor"
-                                            />
-                                            <circle cx="17.7975" cy="5.08737" r="0.732875" fill="currentColor" />
+                                    <Link href="https://www.linkedin.com/company/thegrind-app/">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="48" fill="currentColor" className="bi bi-linkedin cursor-pointer" viewBox="0 0 16 16">
+                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
                                         </svg>
                                     </Link>
                                 </li>
@@ -77,6 +38,7 @@ const Footer = () => {
                                 className="absolute bottom-0 right-0 hidden dark:block sm:left-0"
                             />
                         </div>
+                        {/*
                         <div>
                             <ul className="flex flex-col gap-3 font-bold">
                                 <li className="mb-3 text-lg font-extrabold text-black dark:text-white">Quick Menu</li>
@@ -112,6 +74,8 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
+                        */}
+                        {/*
                         <div>
                             <ul className="flex flex-col gap-3 font-bold">
                                 <li className="mb-3 text-lg font-extrabold text-black dark:text-white">Services</li>
@@ -137,6 +101,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
+                        */}
                         <div>
                             <ul className="flex flex-col gap-3 font-bold">
                                 <li className="mb-3 text-lg font-extrabold text-black dark:text-white">Legal</li>
@@ -150,6 +115,7 @@ const Footer = () => {
                                         Privacy Policy
                                     </Link>
                                 </li>
+                                {/*
                                 <li>
                                     <Link href="/faq" className="inline-block transition hover:scale-110 hover:text-secondary">
                                         FAQs
@@ -160,17 +126,20 @@ const Footer = () => {
                                         Blog
                                     </Link>
                                 </li>
+                                */}
                             </ul>
                         </div>
                         <div>
                             <ul className="flex flex-col gap-3 font-bold">
                                 <li className="mb-3 text-lg font-extrabold text-black dark:text-white">Information</li>
-                                <li>164 Brighton Ave, Allston, Maine, U.S. - 02134</li>
+                                <li>@info@thegrind-app.com</li>
+                                {/*
                                 <li>
                                     <a href="tel:+(617) 254-2333" className="inline-block transition hover:scale-110 hover:text-secondary">
                                         +(617) 254-2333
                                     </a>
                                 </li>
+                                */}
                             </ul>
                         </div>
                     </div>
@@ -182,15 +151,17 @@ const Footer = () => {
                         <div>
                             Copyright© { new Date().getFullYear() + ' ' }
                             <Link href="/" className="text-primary transition hover:text-secondary">
-                                Plurk Technologies Pvt. Ltd.
+                                The Grind Ltd.
                             </Link>
                         </div>
+                        {/*
                         <div>
                             Need help? Visit the{' '}
                             <Link href="/contact-us" className="text-secondary transition hover:text-primary">
                                 Contact Us
                             </Link>
                         </div>
+                        */}
                     </div>
                 </div>
             </div>

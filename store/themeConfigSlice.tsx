@@ -14,11 +14,13 @@ const themeConfigSlice = createSlice({
             payload = payload || state.theme; // light | dark
             localStorage.setItem('theme', payload);
             state.theme = payload;
+            /*
             if (state.theme === 'dark') {
                 document.querySelector('body')?.classList.add('dark');
             } else {
                 document.querySelector('body')?.classList.remove('dark');
             }
+            */
         },
         toggleDirection(state, { payload }) {
             payload = payload || state.direction; // rtl, ltr

@@ -29,8 +29,8 @@ const Header = (props: any) => {
         <header className={`sticky top-0 z-50 bg-black/10 transition duration-300 ${props.className}`}>
             <div className="container">
                 <div className="flex items-center justify-between py-5 lg:py-0">
-                    <Link href="/">
-                        <img src="/assets/images/logo.png" alt="plurk" className="h-10 w-full" />
+                    <Link href="/" className='flex flex-col gap-1'>
+                        <div className="text-white text-xl font-bold">THE GRIND</div><div className='text-white text-sm'>NEVER STOPS</div>
                     </Link>
                     <div className="flex items-center">
                         <div onClick={() => toggleMenu()} className={`overlay fixed inset-0 z-[51] bg-black/60 ${showMenu ? '' : 'hidden'}`}></div>
@@ -55,6 +55,9 @@ const Header = (props: any) => {
                                         Home
                                     </Link>
                                 </li>
+
+                                {/*
+
                                 <li className="group relative" onClick={(e) => e.stopPropagation()}>
                                     <Link
                                         href="#"
@@ -182,8 +185,14 @@ const Header = (props: any) => {
                                         </button>
                                     </form>
                                 </li>
+
+                                */}
+
                             </ul>
                         </div>
+
+                        {/*
+                        
                         <ul className="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
                             <li>
                                 <button
@@ -279,7 +288,11 @@ const Header = (props: any) => {
                                 />
                             </svg>
                         </button>
+
+                        */}
+
                     </div>
+
                 </div>
             </div>
         </header>

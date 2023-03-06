@@ -14,10 +14,10 @@
         @apply mb-10 lg:mb-14;
     }
     .heading h6 {
-        @apply mb-3 text-lg font-extrabold text-primary sm:mb-4;
+        @apply text-3xl mb-3 font-extrabold text-primary sm:mb-4;
     }
     .heading h4 {
-        @apply text-2xl font-extrabold text-black dark:text-white sm:text-3xl lg:text-[40px] lg:!leading-[50px];
+        @apply text-lg font-extrabold text-black dark:text-white sm:text-xl lg:!leading-[50px];
     }
     .portfolio-filter .filter.active button {
         @apply bg-secondary text-white;
@@ -41,7 +41,7 @@
         @apply flex items-center justify-between py-4 px-4 transition hover:text-secondary dark:text-white dark:hover:text-secondary lg:px-0 lg:py-10 hover:lg:scale-110;
     }
     header .menus > ul li > a.active {
-        @apply text-secondary lg:scale-110;
+        @apply text-primary lg:scale-110;
     }
     header .menus .submenu {
         @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 whitespace-nowrap rounded-lg py-3 text-sm font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:left-1/2 lg:grid lg:min-w-[480px] lg:-translate-x-1/2 lg:grid-cols-2 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark;

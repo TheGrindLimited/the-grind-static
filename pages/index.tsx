@@ -29,9 +29,6 @@ const Index = (props: any) => {
                                 <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px] ">
                                     A NEW WAY OF SPORTS TRAINING & COMPETING
                                 </h2>
-                                <p className="my-8 text-xl lg:w-[90%] ">
-                                    Coming Soon!
-                                </p>
                                 <Link href="/about-us" className="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
                                     read more
                                 </Link>
@@ -168,15 +165,15 @@ const Index = (props: any) => {
                             <div className='flex flex-col gap-[12rem] md:gap-0 md:flex-row justify-around text-xl text-black py-8'>
                                 <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
-                                        <img src={imageData[5].attributes.url} className="w-[450px] h-[300px]"/>
+                                        <img src={imageData[5].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
-                                    <div className='text-white text-2xl font-bold'>For Coaches</div>
+                                    <div className='text-white text-2xl font-bold z-50'>For Coaches</div>
                                 </div>
                                 <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
-                                        <img src={imageData[6].attributes.url} className="w-[450px] h-[300px]"/>
+                                        <img src={imageData[6].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
-                                    <div className='text-white text-2xl font-bold'>For Players</div>
+                                    <div className='text-white text-2xl font-bold z-50'>For Players</div>
                                 </div>
                             </div>
                         </div>
@@ -186,7 +183,7 @@ const Index = (props: any) => {
             <section className='flex flex-col text-center py-14 gap-2'>
                 <div className='heading'>
                     <h6>Collaboration</h6>
-                    <h4>We are connect with</h4>
+                    <h4>We are connected with</h4>
                 </div>
                 <div className='flex justify-center gap-16'>
                     <img src={imageData[0].attributes.url} className="w-[256px]" />
@@ -201,13 +198,6 @@ const Index = (props: any) => {
                         <div className="heading text-center lg:mb-0 lg:w-1/3 ltr:lg:pr-10 ltr:lg:text-left rtl:lg:pl-10 rtl:lg:text-right">
                             <h6>STAY TUNED</h6>
                             <h4 className="sm:!leading-[50px]">Be the first to try out when we launch!</h4>
-                            <img
-                                src="/assets/images/form-img.png"
-                                alt="form-image"
-                                className="mx-auto"
-                                data-aos={isRtl ? 'fade-left' : 'fade-right'}
-                                data-aos-duration="1000"
-                            />
                         </div>
                         <form action="" className="rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8">
                             <div className="grid gap-10 sm:grid-cols-2">
@@ -221,7 +211,40 @@ const Index = (props: any) => {
                                         htmlFor=""
                                         className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
                                     >
-                                        Full Name
+                                        First Name*
+                                    </label>
+                                    <svg
+                                        width="20"
+                                        height="22"
+                                        viewBox="0 0 20 22"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
+                                    >
+                                        <path
+                                            d="M5.42855 5.57875C5.42855 8.10348 7.47525 10.1502 9.99998 10.1502C12.5247 10.1502 14.5714 8.10348 14.5714 5.57875C14.5714 3.05402 12.5247 1.00732 9.99998 1.00732"
+                                            stroke="currentColor"
+                                            strokeWidth="1.8"
+                                            strokeLinecap="round"
+                                        />
+                                        <path
+                                            d="M2 16.9328C2 15.9495 2.61812 15.0724 3.5441 14.7417V14.7417C7.71891 13.2507 12.2811 13.2507 16.4559 14.7417V14.7417C17.3819 15.0724 18 15.9495 18 16.9328V18.7014C18 19.9185 16.922 20.8535 15.7172 20.6813L13.8184 20.4101C11.2856 20.0483 8.71435 20.0483 6.18162 20.4101L4.28284 20.6813C3.07798 20.8535 2 19.9185 2 18.7014V16.9328Z"
+                                            stroke="currentColor"
+                                            strokeWidth="1.8"
+                                        />
+                                    </svg>
+                                </div>
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                    />
+                                    <label
+                                        htmlFor=""
+                                        className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                    >
+                                        Last Name*
                                     </label>
                                     <svg
                                         width="20"
@@ -254,7 +277,7 @@ const Index = (props: any) => {
                                         htmlFor=""
                                         className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
                                     >
-                                        Email Address
+                                        Email Address*
                                     </label>
                                     <svg
                                         width="22"
@@ -277,6 +300,22 @@ const Index = (props: any) => {
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                         />
+                                    </svg>
+                                </div>
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                    />
+                                    <label
+                                        htmlFor=""
+                                        className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                    >
+                                        Phone Number
+                                    </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                                     </svg>
                                 </div>
                             </div>
@@ -339,7 +378,7 @@ const Index = (props: any) => {
                             </div>
                         </form>
                     </div>
-                    <div className='flex flex-col py-4'>
+                    <div className='flex flex-col py-16'>
                         <div className='text-xl font-bold'>Get Updates</div>
                         <div>Get the latest app version, news & updates. Subscribe to our newsletter.</div>
                         <form className='flex'>
