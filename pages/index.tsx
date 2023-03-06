@@ -29,7 +29,7 @@ const Index = (props: any) => {
                                 <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px] ">
                                     A NEW WAY OF SPORTS TRAINING & COMPETING
                                 </h2>
-                                <Link href="/about-us" className="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
+                                <Link href="#" className="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
                                     read more
                                 </Link>
                         </div>
