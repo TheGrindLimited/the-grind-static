@@ -26,10 +26,10 @@ const Index = (props: any) => {
                     />
                     <div className="container">
                         <div className="relative bg-[url(/assets/images/world-map.png)] text-white bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
-                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px] ">
+                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[90px] ">
                                     A NEW WAY OF SPORTS TRAINING & COMPETING
                                 </h2>
-                                <Link href="#" className="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
+                                <Link href="#" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
                                     read more
                                 </Link>
                         </div>
@@ -185,10 +185,10 @@ const Index = (props: any) => {
                     <h6>Collaboration</h6>
                     <h4>We are connected with</h4>
                 </div>
-                <div className='flex justify-center gap-16'>
-                    <img src={imageData[0].attributes.url} className="w-[256px]" />
-                    <img src={imageData[1].attributes.url} className="w-[180px]" />
-                    <img src={imageData[2].attributes.url} className="w-[256px]" />
+                <div className='flex flex-col justify-center gap-16 md:flex-row items-center'>
+                    <img src={imageData[0].attributes.url} className="w-[200px]" />
+                    <img src={imageData[1].attributes.url} className="w-[200px]" />
+                    <img src={imageData[2].attributes.url} className="w-[200px]" />
                 </div>
             </section>
             {/*<Testimonial />*/}
