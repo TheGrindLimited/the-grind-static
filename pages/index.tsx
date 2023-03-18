@@ -10,9 +10,46 @@ const Index = (props: any) => {
     const [activeTab, setActiveTab] = useState<string>('all');
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
 
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
+    const [emailAddress, setEmailAddress] = useState("")
+    const [message, setMessage] = useState("")
+
+    const [missingInput, setMissingInput] = useState("");
+    const [invalidEmail, setInvalidEmail] = useState("");
+    const [invalidPhone, setInvalidPhone] = useState("");
+
     const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider.data)
 
-    console.log(imageData)
+    const sendEmailAPI = (e: any) => {
+        if(!firstName || !lastName || !emailAddress || !message){
+            setMissingInput("Missing required information.")
+            return;
+        };
+        setMissingInput("")
+        let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!emailAddress.match(regexEmail)){
+            setInvalidEmail("Invalid Email Address, please try again.")
+            return;
+        };
+        setInvalidEmail("")
+        let regexPhone = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+        if (phoneNumber && !phoneNumber.match(regexPhone)){
+            setInvalidPhone("Invalid Phone Number, please try again.")
+            return;
+        };
+
+        axios.post("http://localhost:1337/api/emails", {
+            "data": {
+                "message": message,
+                "firstname": firstName,
+                "lastname": lastName,
+                "email": emailAddress,
+                "phoneNumber": phoneNumber
+            }
+        })
+    }
 
     return (
         <div className="overflow-x-hidden">
@@ -206,6 +243,7 @@ const Index = (props: any) => {
                                         type="text"
                                         name="name"
                                         className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                        onChange={(e) => {setFirstName(e.target.value)}}
                                     />
                                     <label
                                         htmlFor=""
@@ -239,6 +277,7 @@ const Index = (props: any) => {
                                         type="text"
                                         name="name"
                                         className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                        onChange={(e) => {setLastName(e.target.value)}}
                                     />
                                     <label
                                         htmlFor=""
@@ -272,6 +311,7 @@ const Index = (props: any) => {
                                         type="email"
                                         name="email"
                                         className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                        onChange={(e) => {setEmailAddress(e.target.value)}}
                                     />
                                     <label
                                         htmlFor=""
@@ -304,9 +344,10 @@ const Index = (props: any) => {
                                 </div>
                                 <div className="relative">
                                     <input
-                                        type="text"
+                                        type="tel"
                                         name="name"
                                         className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                        onChange={(e) => {setPhoneNumber(e.target.value)}}
                                     />
                                     <label
                                         htmlFor=""
@@ -324,9 +365,10 @@ const Index = (props: any) => {
                                     type="text"
                                     name="message"
                                     className="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                    onChange={(e) => {setMessage(e.target.value)}}
                                 />
                                 <label htmlFor="" className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white">
-                                    Message
+                                    Message*
                                 </label>
                                 <svg
                                     width="22"
@@ -347,8 +389,11 @@ const Index = (props: any) => {
                                     <circle cx="16.05" cy="9.05713" r="1.25" fill="currentColor" />
                                 </svg>
                             </div>
+                            <div className='text-md text-[#FF5454]'>{missingInput}</div>
+                            <div className='text-md text-[#FF5454]'>{invalidEmail}</div>
+                            <div className='text-md text-[#FF5454]'>{invalidPhone}</div>
                             <div className="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
-                                <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                                <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary" onClick={(e) => sendEmailAPI(e)}>
                                     Send Message
                                 </button>
                             </div>
