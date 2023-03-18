@@ -40,7 +40,7 @@ const Index = (props: any) => {
             return;
         };
 
-        axios.post("http://localhost:1337/api/emails", {
+        axios.post("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/emails", {
             "data": {
                 "message": message,
                 "firstname": firstName,
