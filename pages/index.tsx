@@ -20,6 +20,8 @@ const Index = (props: any) => {
     const [invalidEmail, setInvalidEmail] = useState("");
     const [invalidPhone, setInvalidPhone] = useState("");
 
+    const [messageSent, setMessageSent] = useState(false);
+
     const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider.data)
 
     const sendEmailAPI = (e: any) => {
@@ -40,7 +42,7 @@ const Index = (props: any) => {
             return;
         };
 
-        axios.post("http://localhost:1337/api/emails", {
+        axios.post("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/emails", {
             "data": {
                 "message": message,
                 "firstname": firstName,
@@ -49,6 +51,7 @@ const Index = (props: any) => {
                 "phoneNumber": phoneNumber
             }
         })
+        setMessageSent(true);
     }
 
     return (
@@ -393,9 +396,13 @@ const Index = (props: any) => {
                             <div className='text-md text-[#FF5454]'>{invalidEmail}</div>
                             <div className='text-md text-[#FF5454]'>{invalidPhone}</div>
                             <div className="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
+                                {messageSent ?
+                                <div className='text-lg text-[#7dec51]'>Message Sent!</div>
+                                :
                                 <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary" onClick={(e) => sendEmailAPI(e)}>
                                     Send Message
                                 </button>
+                                }
                             </div>
                             <div className='flex flex-col'>
                                 <a className='flex gap-1' href='mailto:info@thegrind-app.com'>
