@@ -1,26 +1,13 @@
 steps:
-  - name: 'maven'
-    entrypoint: 'mvn'
-    args: ['clean', 'install', '-DskipTests']
-  #https://cloud.google.com/build/docs/cloud-builders
-  # Build the container image
+  -name: []
+steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA', '.']
-  # Push the container image to Container Registry
+    args: ['build', '-t', 'gcr.io/the-grind-331903/the-grind-static', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']
-  # Deploy container image to Cloud Run
+    args: ['push', 'gcr.io/the-grind-331903/the-grind-static']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      - 'run'
-      - 'deploy'
-      - '$_SERVICE_NAME'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA'
-      - '--region'
-      - '$_DEPLOY_REGION'
-options:
-  logging: CLOUD_LOGGING_ONLY
-
-images: [gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA]
+    entrypoint: 'gcloud'
+    timeout: 240s
+    args: ['run', 'deploy', 'the-grind-static', '--image', 'gcr.io/the-grind-331903/the-grind-static', '--region', 'asia-east2', '--platform', 'managed','--port', '3000']
+    images:
+      - gcr.io/the-grind-331903/the-grind-static
