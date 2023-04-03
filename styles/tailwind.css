@@ -13,11 +13,17 @@
     .heading {
         @apply mb-10 lg:mb-14;
     }
+    .heading h2 {
+        @apply text-5xl mb-3 font-extrabold text-primary sm:mb-4;
+    }
     .heading h6 {
         @apply text-3xl mb-3 font-extrabold text-primary sm:mb-4;
     }
     .heading h4 {
         @apply text-xl font-extrabold text-black dark:text-white sm:text-2xl lg:!leading-[50px];
+    }
+    .heading h1 {
+        @apply text-xl text-black dark:text-white sm:text-[1.2rem] lg:!leading-[50px];
     }
     .portfolio-filter .filter.active button {
         @apply bg-secondary text-white;

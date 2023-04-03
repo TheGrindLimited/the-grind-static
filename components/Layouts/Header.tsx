@@ -56,6 +56,18 @@ const Header = (props: any) => {
                                     </Link>
                                 </li>
 
+                                <li>
+                                    <Link href="/coach" className={router.pathname === '/coach' ? 'active' : ''}>
+                                        For Coach/School
+                                    </Link>
+                                </li>
+
+                                <li>
+                                    <Link href="/players" className={router.pathname === '/players' ? 'active' : ''}>
+                                        For Players/Young Athletes/Parents
+                                    </Link>
+                                </li>
+
                                 {/*
 
                                 <li className="group relative" onClick={(e) => e.stopPropagation()}>

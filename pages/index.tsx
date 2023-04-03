@@ -66,8 +66,10 @@ const Index = (props: any) => {
                     />
                     <div className="container">
                         <div className="relative bg-[url(/assets/images/world-map.png)] text-white bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
-                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[90px] ">
-                                    A NEW WAY OF SPORTS TRAINING & COMPETING
+                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[90px]">
+                                    TRACK YOUR TRAINING
+                                    DOCUMENT YOUR GROWTH
+                                    CONNECT WITH COMMUNITY
                                 </h2>
                                 <Link href="#" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
                                     read more
@@ -205,13 +207,13 @@ const Index = (props: any) => {
                             <div className='flex flex-col gap-[12rem] md:gap-0 md:flex-row justify-around text-xl text-black py-8'>
                                 <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
-                                        <img src={imageData[5].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
+                                        <img src={imageData[12].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
                                     <div className='text-white text-2xl font-bold z-50'>For Coaches</div>
                                 </div>
                                 <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
-                                        <img src={imageData[6].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
+                                        <img src={imageData[13].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
                                     <div className='text-white text-2xl font-bold z-50'>For Players</div>
                                 </div>
@@ -223,12 +225,12 @@ const Index = (props: any) => {
             <section className='flex flex-col text-center py-14 gap-2'>
                 <div className='heading'>
                     <h6>Collaboration</h6>
-                    <h4>We are connected with</h4>
+                    <h4>We are supported by</h4>
                 </div>
                 <div className='flex flex-col justify-center gap-16 md:flex-row items-center'>
-                    <img src={imageData[0].attributes.url} className="w-[200px]" />
-                    <img src={imageData[1].attributes.url} className="w-[200px]" />
-                    <img src={imageData[2].attributes.url} className="w-[200px]" />
+                    <img src={imageData[7].attributes.url} className="w-[200px]" />
+                    <img src={imageData[8].attributes.url} className="w-[200px]" />
+                    <img src={imageData[9].attributes.url} className="w-[200px]" />
                 </div>
             </section>
             {/*<Testimonial />*/}

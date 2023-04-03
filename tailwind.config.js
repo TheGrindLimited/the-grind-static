@@ -27,10 +27,10 @@ module.exports = {
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
-            white: '#ffffff',
-            black: '#013220',
-            primary: '#32CD32',
-            secondary: '#355E3B',
+            white: '#F9FAFB',
+            black: '#1F2937',
+            primary: '#31DAB8',
+            secondary: '#102130',
             gray: {
                 DEFAULT: '#7780A1',
                 dark: '#1C2331',
