@@ -1,13 +1,35 @@
+import axios from 'axios';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-const Footer = () => {
+interface imgData{
+    data: Array<any>
+}
+
+const Footer = (props: any) => {
+    //const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider)
+    const [imageData, setImageData] = useState<imgData>()
+
+    useEffect(() => {
+        async function getData() {
+            const results = await axios('https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*');
+            setImageData(results.data)
+        }
+        
+        getData()
+    }, [])
+    
     return (
         <div>
             <footer className="bg-white py-14 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent lg:py-[100px]">
                 <div className="container">
                     <div className="grid gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-5">
                         <div className="flex flex-col">
-                            <div className="text-secondary text-xl font-bold">THE GRIND</div><div className='text-secondary text-sm'>NEVER STOPS</div>
+                            {imageData ?
+                            <img src={imageData.data[0].attributes.Slider.data[11].attributes.url} className="w-[150px] h-[150px]"/>
+                            :
+                            <></>
+                            }
                             <ul className="mt-12 flex items-center gap-8">
                                 <li>
                                     <Link href="https://www.facebook.com/TheGrindapps">
@@ -168,5 +190,6 @@ const Footer = () => {
         </div>
     );
 };
+
 
 export default Footer;

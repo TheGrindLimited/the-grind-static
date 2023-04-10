@@ -44,22 +44,22 @@
         @apply relative flex  flex-col divide-y divide-gray/10  font-bold text-black  lg:flex-row lg:items-center lg:gap-11 lg:divide-y-0  lg:p-0 lg:text-white;
     }
     header .menus > ul li > a {
-        @apply flex items-center justify-between py-4 px-4 transition hover:text-secondary dark:text-white dark:hover:text-secondary lg:px-0 lg:py-10 hover:lg:scale-110;
+        @apply flex items-center justify-between py-4 px-4 transition hover:text-primary dark:text-white dark:hover:text-primary lg:px-0 lg:py-10 hover:lg:scale-110;
     }
     header .menus > ul li > a.active {
         @apply text-primary lg:scale-110;
     }
     header .menus .submenu {
-        @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 whitespace-nowrap rounded-lg py-3 text-sm font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:left-1/2 lg:grid lg:min-w-[480px] lg:-translate-x-1/2 lg:grid-cols-2 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark;
+        @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 whitespace-nowrap rounded-lg py-3 font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:text-center lg:grid lg:min-w-[280px] lg:grid-cols-1 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark;
     }
     .submenu {
         @apply group-hover:visible group-hover:mt-0 group-hover:grid group-hover:opacity-100;
     }
     header .menus .submenu a {
-        @apply block py-2.5 px-8 transition hover:text-secondary lg:px-5 hover:lg:scale-105;
+        @apply block py-2.5 px-8 transition hover:text-primary lg:px-5 hover:lg:scale-105;
     }
     header .menus .submenu a.active {
-        @apply text-secondary lg:scale-105;
+        @apply text-primary lg:scale-105;
     }
 
     /* Filter */

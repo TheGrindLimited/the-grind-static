@@ -55,34 +55,16 @@ const Header = (props: any) => {
                                         Home
                                     </Link>
                                 </li>
-
-                                <li>
-                                    <Link href="/coach" className={router.pathname === '/coach' ? 'active' : ''}>
-                                        For Coach/School
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link href="/players" className={router.pathname === '/players' ? 'active' : ''}>
-                                        For Players/Young Athletes/Parents
-                                    </Link>
-                                </li>
-
-                                {/*
-
                                 <li className="group relative" onClick={(e) => e.stopPropagation()}>
                                     <Link
                                         href="#"
                                         className={
-                                            router.pathname === '/crypto' ||
-                                            router.pathname === '/modern-saas' ||
-                                            router.pathname === '/real-estate' ||
-                                            router.pathname === '/healthcare'
+                                            router.pathname === '/coach'
                                                 ? 'active'
                                                 : ''
                                         }
                                     >
-                                        Landing
+                                        For Coach/School
                                         <div className="transition duration-500 group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -96,53 +78,22 @@ const Header = (props: any) => {
                                         </div>
                                     </Link>
                                     <div className="submenu" onClick={() => toggleMenu()}>
-                                        <Link href="/crypto" className={router.pathname === '/crypto' ? 'active' : ''}>
-                                            Crypto Currency
+                                        <Link href="/coach" className={router.pathname === '/coach' ? 'active' : ''}>
+                                            Features
                                         </Link>
-                                        <Link href="/modern-saas" className={router.pathname === '/modern-saas' ? 'active' : ''}>
-                                            Modern Saas
-                                            <span className="ml-1 rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
+                                        <Link href="https://coach.thegrind-app.com/" className={router.pathname === '/https://coach.thegrind-app.com/' ? 'active' : ''}>
+                                            Team admin/coach portal
                                         </Link>
-                                        <Link href="/real-estate" className={router.pathname === '/real-estate' ? 'active' : ''}>
-                                            Real Estate
-                                            <span className="ml-1 rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </Link>
-                                        <Link href="/healthcare" className={router.pathname === '/healthcare' ? 'active' : ''}>
-                                            Health Care
-                                            <span className="ml-1 rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white">
-                                                New
-                                            </span>
-                                        </Link>
-                                        <a href="#">
-                                            Sales Marketing
-                                            <span className="ml-1 rounded bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">Coming Soon</span>
-                                        </a>
-                                        <a href="#">
-                                            Application
-                                            <span className="ml-1 rounded bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">Coming Soon</span>
-                                        </a>
-                                        <a href="#">
-                                            Online Courses
-                                            <span className="ml-1 rounded bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">Coming Soon</span>
-                                        </a>
-                                        <a href="#">
-                                            Hotel & Resort
-                                            <span className="ml-1 rounded bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">Coming Soon</span>
-                                        </a>
-                                        <a href="#">
-                                            Blog
-                                            <span className="ml-1 rounded bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">Coming Soon</span>
-                                        </a>
-                                        <a href="#">
-                                            NFT Marketplace
-                                            <span className="ml-1 rounded bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">Coming Soon</span>
-                                        </a>
                                     </div>
                                 </li>
+
+                                <li>
+                                    <Link href="/players" className={router.pathname === '/players' ? 'active' : ''}>
+                                        For Players/Young Athletes/Parents
+                                    </Link>
+                                </li>
+
+                                {/*
                                 <li>
                                     <Link
                                         href="/portfolio"

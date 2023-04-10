@@ -20,7 +20,7 @@ const Coach = (props: any) => {
                         <div className="relative w-full py-14 md:my-14 md:inline-block md:py-0 lg:my-[128px]">
                             <div className="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
                                 <h6>For Players / Young Athletes / Parents</h6>
-                                <h4 className="!text-white">wanna get better at your sports?</h4>
+                                <h4 className="!text-white">Wanna get better at your sports?</h4>
                             </div>
                         </div>
                     </div>

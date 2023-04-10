@@ -20,7 +20,10 @@ const Coach = (props: any) => {
                         <div className="relative w-full py-14 md:my-14 md:inline-block md:py-0 lg:my-[128px]">
                             <div className="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
                                 <h6>For Coach / School</h6>
-                                <h4 className="!text-white">wanna elevate your training experience?</h4>
+                                <h4 className="!text-white">Wanna elevate your training experience?</h4>
+                                <a href="https://coach.thegrind-app.com/" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
+                                    Start Now
+                                </a>
                             </div>
                         </div>
                     </div>
