@@ -30,7 +30,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
                     <div className="heading text-left">
                         <h2>Schedule Training</h2>
@@ -43,7 +43,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
                     <img src={imageData.data[1].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
@@ -55,7 +55,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
                     <div className="heading text-left">
                         <h2>Share knowledge</h2>
@@ -68,7 +68,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
                     <img src={imageData.data[6].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
