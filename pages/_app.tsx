@@ -6,6 +6,7 @@ import DefaultLayout from '../components/Layouts/DefaultLayout';
 import { Provider } from 'react-redux';
 import store from '../store/index';
 import Head from 'next/head';
+import axios from 'axios';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (

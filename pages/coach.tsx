@@ -20,14 +20,17 @@ const Coach = (props: any) => {
                         <div className="relative w-full py-14 md:my-14 md:inline-block md:py-0 lg:my-[128px]">
                             <div className="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
                                 <h6>For Coach / School</h6>
-                                <h4 className="!text-white">wanna elevate your training experience?</h4>
+                                <h4 className="!text-white">Wanna elevate your training experience?</h4>
+                                <a href="https://coach.thegrind-app.com/" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
+                                    Start Now
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
                     <div className="heading text-left">
                         <h2>Schedule Training</h2>
@@ -40,7 +43,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
                     <img src={imageData.data[1].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
@@ -52,7 +55,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
                     <div className="heading text-left">
                         <h2>Share knowledge</h2>
@@ -65,7 +68,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
                     <img src={imageData.data[6].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>

@@ -20,14 +20,14 @@ const Coach = (props: any) => {
                         <div className="relative w-full py-14 md:my-14 md:inline-block md:py-0 lg:my-[128px]">
                             <div className="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
                                 <h6>For Players / Young Athletes / Parents</h6>
-                                <h4 className="!text-white">wanna get better at your sports?</h4>
+                                <h4 className="!text-white">Wanna get better at your sports?</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
                     <img src={imageData.data[4].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
@@ -39,7 +39,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
                     <div className="heading">
                         <h2 className='max-w-[450px]'>Communicate with other players</h2>
@@ -51,7 +51,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
                     <img src={imageData.data[0].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
@@ -63,7 +63,7 @@ const Coach = (props: any) => {
                 </div>
             </div>
 
-            <div className='flex py-[41px] lg:py-[53px] justify-center gap-[15vw]'>
+            <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
                     <div className="heading text-left">
                         <h2 className='max-w-[430px]'>Explore new sports knowledge</h2>

@@ -10,6 +10,7 @@ const Index = (props: any) => {
     const [activeTab, setActiveTab] = useState<string>('all');
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
 
+
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
@@ -24,6 +25,7 @@ const Index = (props: any) => {
 
     const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider.data)
 
+    console.log(imageData[5].attributes.url)
     const sendEmailAPI = (e: any) => {
         if(!firstName || !lastName || !emailAddress || !message){
             setMissingInput("Missing required information.")
@@ -71,9 +73,9 @@ const Index = (props: any) => {
                                     DOCUMENT YOUR GROWTH
                                     CONNECT WITH COMMUNITY
                                 </h2>
-                                <Link href="#" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
-                                    read more
-                                </Link>
+                                <a href="#stay-tuned" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
+                                    Launching Soon!
+                                </a>
                         </div>
                     </div>
                 </div>
@@ -82,10 +84,10 @@ const Index = (props: any) => {
                 <div className="container">
                     <div className="heading text-center">
                         <h6>Our Mission</h6>
-                        <h4>Start your grinding with</h4>
+                        <h4>The Grind Never Stops!</h4>
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        <div data-aos="fade-up" data-aos-duration="1000">
+                        <Link href="players" data-aos="fade-up" data-aos-duration="1000">
                             <div
                                 className="h-[280px] group rounded-3xl border-2 border-white bg-white p-6 transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
                                 style={{
@@ -118,8 +120,8 @@ const Index = (props: any) => {
                                     Digitise traditional sports training
                                 </p>
                             </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
+                        </Link>
+                        <Link href="players" data-aos="fade-up" data-aos-duration="1000">
                             <div
                                 className="h-[280px] group rounded-3xl border-2 border-white bg-white p-6 transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
                                 style={{
@@ -152,8 +154,8 @@ const Index = (props: any) => {
                                     Make training knowledge more accessible
                                 </p>
                             </div>
-                        </div>
-                        <div data-aos="fade-up" data-aos-duration="1000">
+                        </Link>
+                        <Link href="players" data-aos="fade-up" data-aos-duration="1000">
                             <div
                                 className="h-[280px] group rounded-3xl border-2 border-white bg-white p-6 transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
                                 style={{
@@ -186,7 +188,7 @@ const Index = (props: any) => {
                                     Connect the community
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -205,18 +207,18 @@ const Index = (props: any) => {
                                 <h4 className="leading-normal !text-white lg:!leading-[50px]">We bring solutions to make life easier for our customers.</h4>
                             </div>
                             <div className='flex flex-col gap-[12rem] md:gap-0 md:flex-row justify-around text-xl text-black py-8'>
-                                <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
+                                <Link href="coach" className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
                                         <img src={imageData[12].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
                                     <div className='text-white text-2xl font-bold z-50'>For Coaches</div>
-                                </div>
-                                <div className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
+                                </Link>
+                                <Link href="players" className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
                                         <img src={imageData[13].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
                                     <div className='text-white text-2xl font-bold z-50'>For Players</div>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -234,7 +236,7 @@ const Index = (props: any) => {
                 </div>
             </section>
             {/*<Testimonial />*/}
-            <section className="py-14 dark:bg-gray-dark lg:py-[100px]">
+            <section className="py-14 dark:bg-gray-dark lg:py-[100px]" id="stay-tuned">
                 <div className="container">
                     <div className="relative z-10 lg:flex">
                         <div className="heading text-center lg:mb-0 lg:w-1/3 ltr:lg:pr-10 ltr:lg:text-left rtl:lg:pl-10 rtl:lg:text-right">
