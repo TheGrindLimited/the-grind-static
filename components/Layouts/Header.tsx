@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import { IRootState } from '../../store';
 import { toggleTheme, toggleDirection } from '../../store/themeConfigSlice';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const Header = (props: any) => {
     const router = useRouter();
@@ -25,12 +26,33 @@ const Header = (props: any) => {
         setShowSearch(!showSearch);
     };
 
+    interface imgData{
+        data: Array<any>
+    }
+
+    const [imageData, setImageData] = useState<imgData>()
+
+    useEffect(() => {
+        async function getData() {
+            const results = await axios('https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*');
+            setImageData(results.data)
+        }
+        
+        getData()
+    }, [])
+
     return (
-        <header className={`sticky top-0 z-50 bg-black/10 transition duration-300 ${props.className}`}>
+        <header className={`sticky top-0 z-50 bg-black transition duration-300 ${props.className}`}>
             <div className="container">
                 <div className="flex items-center justify-between py-3 lg:py-0">
                     <Link href="/" className='flex flex-col gap-1'>
-                        <div className="text-white text-xl font-bold">THE GRIND</div><div className='text-white text-sm'>NEVER STOPS</div>
+                        {imageData ?
+                            <img src={imageData.data[0].attributes.Slider.data[11].attributes.url} className="w-[150px] h-[130px]"/>
+                            :
+                            <>
+                                <div className="text-white text-xl font-bold">THE GRIND</div><div className='text-white text-sm'>NEVER STOPS</div>
+                            </>
+                            }
                     </Link>
                     <div className="flex items-center">
                         <div onClick={() => toggleMenu()} className={`overlay fixed inset-0 z-[51] bg-black/60 ${showMenu ? '' : 'hidden'}`}></div>
