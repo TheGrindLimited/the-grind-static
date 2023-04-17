@@ -10,6 +10,8 @@ const Index = (props: any) => {
     const [activeTab, setActiveTab] = useState<string>('all');
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
 
+    console.log(props)
+
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -24,6 +26,7 @@ const Index = (props: any) => {
     const [messageSent, setMessageSent] = useState(false);
 
     const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider.data)
+    const [textData, setTextData] = useState(props.text_data.data)
 
     const sendEmailAPI = (e: any) => {
         if(!firstName || !lastName || !emailAddress || !message){
@@ -62,12 +65,10 @@ const Index = (props: any) => {
                     <div className="container">
                         <div className="relative text-white pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36" >
                             <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[90px] bg-gray-100 bg-opacity-100">
-                                TRACK YOUR TRAINING
-                                DOCUMENT YOUR GROWTH
-                                CONNECT WITH COMMUNITY
+                                {textData[0].attributes.text}
                             </h2>
                             <a href="#stay-tuned" className="btn mx-auto my-12 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">
-                                Launching Soon!
+                                {textData[1].attributes.text}
                             </a>
                         </div>
                     </div>
@@ -76,8 +77,8 @@ const Index = (props: any) => {
             <section className=" py-14 dark:bg-none lg:py-[100px]">
                 <div className="container">
                     <div className="heading text-center">
-                        <h6>Our Mission</h6>
-                        <h4>The Grind Never Stops!</h4>
+                        <h6>{textData[2].attributes.text}</h6>
+                        <h4>{textData[3].attributes.text}</h4>
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <Link href="players" data-aos="fade-up" data-aos-duration="1000">
@@ -88,29 +89,48 @@ const Index = (props: any) => {
                                 }}
                             >
                                 <div
-                                    className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary transition group-hover:bg-black"
+                                    className="flex h-14 w-14 items-center justify-center rounded-full transition"
                                     style={{
                                         boxShadow: '0px 15px 30px rgba(180, 118, 229, 0.4)',
                                     }}
                                 >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            opacity="0.5"
-                                            d="M14.2371 18.7087L18.7103 14.2366L21.4893 17.0156V21.4888H17.0172L14.2371 18.7087ZM5.2917 9.76334L2.3092 6.7819C2.21118 6.68399 2.13342 6.56771 2.08036 6.43973C2.02731 6.31174 2 6.17455 2 6.03601C2 5.89746 2.02731 5.76027 2.08036 5.63229C2.13342 5.5043 2.21118 5.38803 2.3092 5.29012L5.2917 2.30867C5.4894 2.11103 5.75751 2 6.03706 2C6.31662 2 6.58472 2.11103 6.78242 2.30867L9.76598 5.29012L5.2917 9.76334Z"
-                                            fill="white"
-                                        />
-                                        <path
-                                            d="M5.29177 12.7459L7.21895 14.6742L8.71179 13.1813L6.78249 11.2552L8.27321 9.76449L10.2015 11.6917L11.6922 10.201L9.76605 8.27271L11.2568 6.78199L13.1818 8.71128L14.6736 7.2195L12.7454 5.29232L15.7279 2.31087C15.9256 2.11323 16.1937 2.0022 16.4732 2.0022C16.7528 2.0022 17.0209 2.11323 17.2186 2.31087L21.6908 6.78304C21.8884 6.98074 21.9994 7.24885 21.9994 7.5284C21.9994 7.80795 21.8884 8.07606 21.6908 8.27376L8.27321 21.6913C8.07551 21.889 7.8074 22 7.52785 22C7.2483 22 6.98019 21.889 6.78249 21.6913L2.31032 17.2192C2.11268 17.0215 2.00165 16.7533 2.00165 16.4738C2.00165 16.1942 2.11268 15.9261 2.31032 15.7284L5.29177 12.7459Z"
-                                            fill="white"
-                                        />
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="1920.000000pt" height="1920.000000pt" viewBox="0 0 1920.000000 1920.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,1920.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                        <path d="M6520 16889 c-123 -24 -235 -115 -293 -237 l-32 -67 -3 -242 -4 -243
+                                        -1071 -2 c-1017 -3 -1074 -4 -1120 -22 -66 -25 -150 -105 -184 -174 l-28 -57
+                                        0 -1090 c0 -1173 1 -1188 55 -1526 121 -742 436 -1506 889 -2154 389 -557 945
+                                        -1015 1561 -1289 243 -107 416 -161 934 -290 l488 -122 91 -130 c125 -179 192
+                                        -267 581 -764 188 -239 361 -464 385 -500 74 -110 139 -269 173 -425 10 -47
+                                        13 -230 13 -825 l0 -765 -23 -75 c-65 -208 -207 -374 -397 -465 -143 -68 -138
+                                        -68 -695 -74 l-505 -6 -57 -27 c-76 -35 -138 -95 -179 -170 l-34 -63 -3 -863
+                                        -2 -862 -103 0 c-206 0 -319 -65 -395 -227 l-27 -58 -3 -388 -3 -387 3071 0
+                                        3071 0 -3 387 -3 388 -27 58 c-76 162 -189 227 -395 227 l-103 0 -2 863 -3
+                                        862 -34 63 c-41 75 -103 135 -179 170 l-57 27 -505 6 c-557 6 -552 6 -695 74
+                                        -190 91 -332 257 -397 465 l-23 75 0 765 c0 600 3 778 13 825 35 158 95 305
+                                        170 418 26 40 200 268 388 507 389 497 456 585 581 764 l91 130 488 122 c518
+                                        129 691 183 934 290 616 274 1172 732 1561 1289 453 648 768 1412 889 2154 54
+                                        338 55 353 55 1526 l0 1090 -28 57 c-34 69 -118 149 -184 174 -46 18 -103 19
+                                        -1120 22 l-1071 2 -4 243 -3 242 -32 67 c-60 126 -170 213 -302 238 -68 13
+                                        -6086 12 -6151 -1z m-329 -2234 c6 -770 12 -896 54 -1279 114 -1029 400 -2007
+                                        865 -2963 56 -113 99 -207 97 -209 -5 -5 -245 60 -355 96 -642 210 -1209 643
+                                        -1598 1221 -377 559 -631 1176 -733 1784 -53 313 -54 326 -58 1233 -3 470 -2
+                                        860 1 868 5 12 130 14 863 12 l858 -3 6 -760z m8544 -95 c0 -763 -2 -871 -18
+                                        -1000 -93 -747 -340 -1400 -771 -2039 -393 -584 -953 -1010 -1611 -1225 -120
+                                        -39 -337 -97 -342 -92 -2 2 41 95 95 207 475 976 757 1948 872 3004 37 349 42
+                                        474 47 1225 2 415 6 761 8 768 4 10 181 12 862 10 l858 -3 0 -855z"/>
+                                        </g>
                                     </svg>
                                 </div>
                                 <div className="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
                                 >
-                                    Digitization
+                                    {textData[4].attributes.text}
                                 </div>
                                 <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                    Digitise traditional sports training
+                                    {textData[5].attributes.text}
                                 </p>
                             </div>
                         </Link>
@@ -122,29 +142,48 @@ const Index = (props: any) => {
                                 }}
                             >
                                 <div
-                                    className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary transition group-hover:bg-black"
+                                    className="flex h-14 w-14 items-center justify-center rounded-full transition"
                                     style={{
                                         boxShadow: '0px 15px 30px rgba(180, 118, 229, 0.4)',
                                     }}
                                 >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            opacity="0.5"
-                                            d="M14.2371 18.7087L18.7103 14.2366L21.4893 17.0156V21.4888H17.0172L14.2371 18.7087ZM5.2917 9.76334L2.3092 6.7819C2.21118 6.68399 2.13342 6.56771 2.08036 6.43973C2.02731 6.31174 2 6.17455 2 6.03601C2 5.89746 2.02731 5.76027 2.08036 5.63229C2.13342 5.5043 2.21118 5.38803 2.3092 5.29012L5.2917 2.30867C5.4894 2.11103 5.75751 2 6.03706 2C6.31662 2 6.58472 2.11103 6.78242 2.30867L9.76598 5.29012L5.2917 9.76334Z"
-                                            fill="white"
-                                        />
-                                        <path
-                                            d="M5.29177 12.7459L7.21895 14.6742L8.71179 13.1813L6.78249 11.2552L8.27321 9.76449L10.2015 11.6917L11.6922 10.201L9.76605 8.27271L11.2568 6.78199L13.1818 8.71128L14.6736 7.2195L12.7454 5.29232L15.7279 2.31087C15.9256 2.11323 16.1937 2.0022 16.4732 2.0022C16.7528 2.0022 17.0209 2.11323 17.2186 2.31087L21.6908 6.78304C21.8884 6.98074 21.9994 7.24885 21.9994 7.5284C21.9994 7.80795 21.8884 8.07606 21.6908 8.27376L8.27321 21.6913C8.07551 21.889 7.8074 22 7.52785 22C7.2483 22 6.98019 21.889 6.78249 21.6913L2.31032 17.2192C2.11268 17.0215 2.00165 16.7533 2.00165 16.4738C2.00165 16.1942 2.11268 15.9261 2.31032 15.7284L5.29177 12.7459Z"
-                                            fill="white"
-                                        />
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="1920.000000pt" height="1920.000000pt" viewBox="0 0 1920.000000 1920.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,1920.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                        <path d="M6520 16889 c-123 -24 -235 -115 -293 -237 l-32 -67 -3 -242 -4 -243
+                                        -1071 -2 c-1017 -3 -1074 -4 -1120 -22 -66 -25 -150 -105 -184 -174 l-28 -57
+                                        0 -1090 c0 -1173 1 -1188 55 -1526 121 -742 436 -1506 889 -2154 389 -557 945
+                                        -1015 1561 -1289 243 -107 416 -161 934 -290 l488 -122 91 -130 c125 -179 192
+                                        -267 581 -764 188 -239 361 -464 385 -500 74 -110 139 -269 173 -425 10 -47
+                                        13 -230 13 -825 l0 -765 -23 -75 c-65 -208 -207 -374 -397 -465 -143 -68 -138
+                                        -68 -695 -74 l-505 -6 -57 -27 c-76 -35 -138 -95 -179 -170 l-34 -63 -3 -863
+                                        -2 -862 -103 0 c-206 0 -319 -65 -395 -227 l-27 -58 -3 -388 -3 -387 3071 0
+                                        3071 0 -3 387 -3 388 -27 58 c-76 162 -189 227 -395 227 l-103 0 -2 863 -3
+                                        862 -34 63 c-41 75 -103 135 -179 170 l-57 27 -505 6 c-557 6 -552 6 -695 74
+                                        -190 91 -332 257 -397 465 l-23 75 0 765 c0 600 3 778 13 825 35 158 95 305
+                                        170 418 26 40 200 268 388 507 389 497 456 585 581 764 l91 130 488 122 c518
+                                        129 691 183 934 290 616 274 1172 732 1561 1289 453 648 768 1412 889 2154 54
+                                        338 55 353 55 1526 l0 1090 -28 57 c-34 69 -118 149 -184 174 -46 18 -103 19
+                                        -1120 22 l-1071 2 -4 243 -3 242 -32 67 c-60 126 -170 213 -302 238 -68 13
+                                        -6086 12 -6151 -1z m-329 -2234 c6 -770 12 -896 54 -1279 114 -1029 400 -2007
+                                        865 -2963 56 -113 99 -207 97 -209 -5 -5 -245 60 -355 96 -642 210 -1209 643
+                                        -1598 1221 -377 559 -631 1176 -733 1784 -53 313 -54 326 -58 1233 -3 470 -2
+                                        860 1 868 5 12 130 14 863 12 l858 -3 6 -760z m8544 -95 c0 -763 -2 -871 -18
+                                        -1000 -93 -747 -340 -1400 -771 -2039 -393 -584 -953 -1010 -1611 -1225 -120
+                                        -39 -337 -97 -342 -92 -2 2 41 95 95 207 475 976 757 1948 872 3004 37 349 42
+                                        474 47 1225 2 415 6 761 8 768 4 10 181 12 862 10 l858 -3 0 -855z"/>
+                                        </g>
                                     </svg>
                                 </div>
                                 <div className="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
                                 >
-                                    Accessible
+                                    {textData[6].attributes.text}
                                 </div>
                                 <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                    Make training knowledge more accessible
+                                    {textData[7].attributes.text}
                                 </p>
                             </div>
                         </Link>
@@ -156,29 +195,48 @@ const Index = (props: any) => {
                                 }}
                             >
                                 <div
-                                    className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary transition group-hover:bg-black"
+                                    className="flex h-14 w-14 items-center justify-center rounded-full transition"
                                     style={{
                                         boxShadow: '0px 15px 30px rgba(180, 118, 229, 0.4)',
                                     }}
                                 >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            opacity="0.5"
-                                            d="M14.2371 18.7087L18.7103 14.2366L21.4893 17.0156V21.4888H17.0172L14.2371 18.7087ZM5.2917 9.76334L2.3092 6.7819C2.21118 6.68399 2.13342 6.56771 2.08036 6.43973C2.02731 6.31174 2 6.17455 2 6.03601C2 5.89746 2.02731 5.76027 2.08036 5.63229C2.13342 5.5043 2.21118 5.38803 2.3092 5.29012L5.2917 2.30867C5.4894 2.11103 5.75751 2 6.03706 2C6.31662 2 6.58472 2.11103 6.78242 2.30867L9.76598 5.29012L5.2917 9.76334Z"
-                                            fill="white"
-                                        />
-                                        <path
-                                            d="M5.29177 12.7459L7.21895 14.6742L8.71179 13.1813L6.78249 11.2552L8.27321 9.76449L10.2015 11.6917L11.6922 10.201L9.76605 8.27271L11.2568 6.78199L13.1818 8.71128L14.6736 7.2195L12.7454 5.29232L15.7279 2.31087C15.9256 2.11323 16.1937 2.0022 16.4732 2.0022C16.7528 2.0022 17.0209 2.11323 17.2186 2.31087L21.6908 6.78304C21.8884 6.98074 21.9994 7.24885 21.9994 7.5284C21.9994 7.80795 21.8884 8.07606 21.6908 8.27376L8.27321 21.6913C8.07551 21.889 7.8074 22 7.52785 22C7.2483 22 6.98019 21.889 6.78249 21.6913L2.31032 17.2192C2.11268 17.0215 2.00165 16.7533 2.00165 16.4738C2.00165 16.1942 2.11268 15.9261 2.31032 15.7284L5.29177 12.7459Z"
-                                            fill="white"
-                                        />
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="1920.000000pt" height="1920.000000pt" viewBox="0 0 1920.000000 1920.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,1920.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                        <path d="M6520 16889 c-123 -24 -235 -115 -293 -237 l-32 -67 -3 -242 -4 -243
+                                        -1071 -2 c-1017 -3 -1074 -4 -1120 -22 -66 -25 -150 -105 -184 -174 l-28 -57
+                                        0 -1090 c0 -1173 1 -1188 55 -1526 121 -742 436 -1506 889 -2154 389 -557 945
+                                        -1015 1561 -1289 243 -107 416 -161 934 -290 l488 -122 91 -130 c125 -179 192
+                                        -267 581 -764 188 -239 361 -464 385 -500 74 -110 139 -269 173 -425 10 -47
+                                        13 -230 13 -825 l0 -765 -23 -75 c-65 -208 -207 -374 -397 -465 -143 -68 -138
+                                        -68 -695 -74 l-505 -6 -57 -27 c-76 -35 -138 -95 -179 -170 l-34 -63 -3 -863
+                                        -2 -862 -103 0 c-206 0 -319 -65 -395 -227 l-27 -58 -3 -388 -3 -387 3071 0
+                                        3071 0 -3 387 -3 388 -27 58 c-76 162 -189 227 -395 227 l-103 0 -2 863 -3
+                                        862 -34 63 c-41 75 -103 135 -179 170 l-57 27 -505 6 c-557 6 -552 6 -695 74
+                                        -190 91 -332 257 -397 465 l-23 75 0 765 c0 600 3 778 13 825 35 158 95 305
+                                        170 418 26 40 200 268 388 507 389 497 456 585 581 764 l91 130 488 122 c518
+                                        129 691 183 934 290 616 274 1172 732 1561 1289 453 648 768 1412 889 2154 54
+                                        338 55 353 55 1526 l0 1090 -28 57 c-34 69 -118 149 -184 174 -46 18 -103 19
+                                        -1120 22 l-1071 2 -4 243 -3 242 -32 67 c-60 126 -170 213 -302 238 -68 13
+                                        -6086 12 -6151 -1z m-329 -2234 c6 -770 12 -896 54 -1279 114 -1029 400 -2007
+                                        865 -2963 56 -113 99 -207 97 -209 -5 -5 -245 60 -355 96 -642 210 -1209 643
+                                        -1598 1221 -377 559 -631 1176 -733 1784 -53 313 -54 326 -58 1233 -3 470 -2
+                                        860 1 868 5 12 130 14 863 12 l858 -3 6 -760z m8544 -95 c0 -763 -2 -871 -18
+                                        -1000 -93 -747 -340 -1400 -771 -2039 -393 -584 -953 -1010 -1611 -1225 -120
+                                        -39 -337 -97 -342 -92 -2 2 41 95 95 207 475 976 757 1948 872 3004 37 349 42
+                                        474 47 1225 2 415 6 761 8 768 4 10 181 12 862 10 l858 -3 0 -855z"/>
+                                        </g>
                                     </svg>
                                 </div>
                                 <div className="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
                                 >
-                                    Connection
+                                    {textData[8].attributes.text}
                                 </div>
                                 <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                    Connect the community
+                                    {textData[9].attributes.text}
                                 </p>
                             </div>
                         </Link>
@@ -196,21 +254,21 @@ const Index = (props: any) => {
                     <div className="container">
                         <div className="">
                             <div className="heading mb-16 text-center ltr:lg:text-left rtl:lg:text-right">
-                                <h6>Who is it for?</h6>
-                                <h4 className="leading-normal !text-white lg:!leading-[50px]">We bring solutions to make life easier for our customers.</h4>
+                                <h6>{textData[10].attributes.text}</h6>
+                                <h4 className="leading-normal !text-white lg:!leading-[50px]">{textData[11].attributes.text}</h4>
                             </div>
                             <div className='flex flex-col gap-[12rem] md:gap-0 md:flex-row justify-around text-xl text-black py-8'>
                                 <Link href="coach" className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
                                         <img src={imageData[12].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
-                                    <div className='text-white text-2xl font-bold z-50'>For Coaches</div>
+                                    <div className='text-white text-2xl font-bold z-50'>{textData[12].attributes.text}</div>
                                 </Link>
                                 <Link href="players" className='flex flex-col items-center text-center justify-center cursor-pointer hover:-translate-y-5 ease-in duration-100'>
                                     <div className='w-[450px] h-[200px]'>
                                         <img src={imageData[13].attributes.url} className="w-[450px] h-[300px] opacity-60"/>
                                     </div>
-                                    <div className='text-white text-2xl font-bold z-50'>For Players</div>
+                                    <div className='text-white text-2xl font-bold z-50'>{textData[13].attributes.text}</div>
                                 </Link>
                             </div>
                         </div>
@@ -219,8 +277,8 @@ const Index = (props: any) => {
             </section>
             <section className='flex flex-col text-center py-14 gap-2'>
                 <div className='heading'>
-                    <h6>Collaboration</h6>
-                    <h4>We are supported by</h4>
+                    <h6>{textData[14].attributes.text}</h6>
+                    <h4>{textData[15].attributes.text}</h4>
                 </div>
                 <div className='flex flex-col justify-center gap-16 md:flex-row items-center'>
                     <img src={imageData[7].attributes.url} className="w-[200px]" />
@@ -233,8 +291,8 @@ const Index = (props: any) => {
                 <div className="container">
                     <div className="relative z-10 lg:flex">
                         <div className="heading text-center lg:mb-0 lg:w-1/3 ltr:lg:pr-10 ltr:lg:text-left rtl:lg:pl-10 rtl:lg:text-right">
-                            <h6>STAY TUNED</h6>
-                            <h4 className="sm:!leading-[50px]">Be the first to try out when we launch!</h4>
+                            <h6>{textData[16].attributes.text}</h6>
+                            <h4 className="sm:!leading-[50px]">{textData[17].attributes.text}</h4>
                         </div>
                         <form action="" className="rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8">
                             <div className="grid gap-10 sm:grid-cols-2">
@@ -249,7 +307,7 @@ const Index = (props: any) => {
                                         htmlFor=""
                                         className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
                                     >
-                                        First Name*
+                                        {textData[18].attributes.text}
                                     </label>
                                     <svg
                                         width="20"
@@ -283,7 +341,7 @@ const Index = (props: any) => {
                                         htmlFor=""
                                         className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
                                     >
-                                        Last Name*
+                                        {textData[19].attributes.text}
                                     </label>
                                     <svg
                                         width="20"
@@ -317,7 +375,7 @@ const Index = (props: any) => {
                                         htmlFor=""
                                         className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
                                     >
-                                        Email Address*
+                                        {textData[20].attributes.text}
                                     </label>
                                     <svg
                                         width="22"
@@ -353,7 +411,7 @@ const Index = (props: any) => {
                                         htmlFor=""
                                         className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
                                     >
-                                        Phone Number
+                                        {textData[21].attributes.text}
                                     </label>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
@@ -368,7 +426,7 @@ const Index = (props: any) => {
                                     onChange={(e) => {setMessage(e.target.value)}}
                                 />
                                 <label htmlFor="" className="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white">
-                                    Message*
+                                    {textData[22].attributes.text}
                                 </label>
                                 <svg
                                     width="22"
@@ -397,7 +455,7 @@ const Index = (props: any) => {
                                 <div className='text-lg text-[#7dec51]'>Message Sent!</div>
                                 :
                                 <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary" onClick={(e) => sendEmailAPI(e)}>
-                                    Send Message
+                                    {textData[23].attributes.text}
                                 </button>
                                 }
                             </div>
@@ -448,18 +506,24 @@ const Index = (props: any) => {
     );
 };
 
-export async function getStaticProps() {
-  let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*")
-  let text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/notices")
-  const image_data = image.data
-  const text_data = text.data
-
-  return {
-    props: {
-      image_data,
-      text_data
+export async function getStaticProps(context : any) {
+    let text: any;
+    if(context.locale == "en-US"){
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/pages?_locale=en-US")
+    }else{
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/pages?_locale=zh")
     }
-  }
+    let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*")
+    const image_data = image.data
+    const text_data = text.data
+
+    return {
+    props: {
+        image_data,
+        text_data,
+        context
+    }
+    }
 }
 
 export default Index;
