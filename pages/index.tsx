@@ -61,7 +61,7 @@ const Index = (props: any) => {
     return (
         <div className="overflow-x-hidden">
             <div className="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
-                <div className="relative text-white bg-auto bg-bottom bg-no-repeat" style={{backgroundImage: `url(${imageData[14].attributes.url})`, }}>
+                <div className="relative text-white bg-cover bg-bottom bg-no-repeat" style={{backgroundImage: `url(${imageData[14].attributes.url})`, }}>
                     <div className="container">
                         <div className="relative text-white pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36" >
                             <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[90px] bg-gray-100 bg-opacity-100">
