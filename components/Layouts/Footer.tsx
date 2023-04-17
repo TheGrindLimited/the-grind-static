@@ -26,7 +26,7 @@ const Footer = (props: any) => {
                     <div className="grid gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-5">
                         <div className="flex flex-col">
                             {imageData ?
-                            <img src={imageData.data[0].attributes.Slider.data[11].attributes.url} className="w-[150px] h-[150px]"/>
+                            <img src={imageData.data[0].attributes.Slider.data[11].attributes.url} className="w-[100px] h-[90px]"/>
                             :
                             <></>
                             }
