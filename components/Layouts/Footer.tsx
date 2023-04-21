@@ -12,7 +12,7 @@ const Footer = (props: any) => {
 
     useEffect(() => {
         async function getData() {
-            const results = await axios('https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*');
+            const results = await axios('https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-images?populate=*');
             setImageData(results.data)
         }
         
@@ -26,7 +26,7 @@ const Footer = (props: any) => {
                     <div className="grid gap-y-10 gap-x-4 sm:grid-cols-3 lg:grid-cols-5">
                         <div className="flex flex-col">
                             {imageData ?
-                            <img src={imageData.data[0].attributes.Slider.data[11].attributes.url} className="w-[100px] h-[90px]"/>
+                            <img src={imageData.data[0].attributes.image.data[0].attributes.url} className="w-[100px] h-[90px]"/>
                             :
                             <></>
                             }
