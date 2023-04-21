@@ -9,6 +9,9 @@ const Coach = (props: any) => {
 
     const [imageData, setImageData] = useState(props.image_data.data[0].attributes.image.data)
     const [textData, setTextData] = useState(props.text_data.data)
+    const [linkData, setlinkData] = useState(props.link_data.data)
+
+    console.log(linkData)
     
     return (
         <div>
@@ -22,10 +25,14 @@ const Coach = (props: any) => {
                             <div className="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
                                 <h6>{textData[0].attributes.text}</h6>
                                 <h4 className="!text-white">{textData[1].attributes.text}</h4>
-                                <a href="/#stay-tuned"className="flex flex-col lg:flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto">
-                                    <img src={imageData[0].attributes.url} className="w-[200px] h-[60px]"/>
-                                    <img src={imageData[1].attributes.url} className="w-[200px] h-[60px]"/>
-                                </a>
+                                <div className="flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row">
+                                    <a href={linkData[5].attributes.links}>
+                                        <img src={imageData[0].attributes.url} className="w-[200px] h-[60px]"/>
+                                    </a>
+                                    <a href={linkData[4].attributes.links}>
+                                        <img src={imageData[1].attributes.url} className="w-[200px] h-[60px]"/>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,13 +98,16 @@ export async function getStaticProps(context: any) {
     }else{
         text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?_locale=zh")
     }
+    let link = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-infos")
     const image_data = image.data
     const text_data = text.data
+    const link_data = link.data
   
     return {
       props: {
         image_data,
-        text_data
+        text_data,
+        link_data
       }
     }
   }
