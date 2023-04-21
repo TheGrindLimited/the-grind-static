@@ -34,7 +34,7 @@ const Header = (props: any) => {
 
     useEffect(() => {
         async function getData() {
-            const results = await axios('https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*');
+            const results = await axios('https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-images?populate=*');
             setImageData(results.data)
         }
         
@@ -44,10 +44,10 @@ const Header = (props: any) => {
     return (
         <header className={`sticky top-0 z-50 bg-black transition duration-300 ${props.className}`}>
             <div className="container">
-                <div className="flex items-center justify-between py-3 lg:py-0">
+                <div className="flex items-center justify-between py-1 lg:py-0">
                     <Link href="/" className='flex flex-col gap-1'>
                         {imageData ?
-                            <img src={imageData.data[0].attributes.Slider.data[11].attributes.url} className="w-[100px] h-[90px]"/>
+                            <img src={imageData.data[0].attributes.image.data[0].attributes.url} className="w-[100px] h-[90px]"/>
                             :
                             <>
                                 <div className="text-white text-xl font-bold">THE GRIND</div><div className='text-white text-sm'>NEVER STOPS</div>

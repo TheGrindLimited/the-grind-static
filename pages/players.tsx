@@ -7,7 +7,8 @@ import { useState } from 'react';
 const Coach = (props: any) => {
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
 
-    const [imageData, setImageData] = useState(props.image_data.data[0].attributes.Slider)
+    const [imageData, setImageData] = useState(props.image_data.data[0].attributes.image.data)
+    const [textData, setTextData] = useState(props.text_data.data)
     
     return (
         <div>
@@ -19,8 +20,12 @@ const Coach = (props: any) => {
                     <div className="container">
                         <div className="relative w-full py-14 md:my-14 md:inline-block md:py-0 lg:my-[128px]">
                             <div className="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
-                                <h6>For Players / Young Athletes / Parents</h6>
-                                <h4 className="!text-white">Wanna get better at your sports?</h4>
+                                <h6>{textData[0].attributes.text}</h6>
+                                <h4 className="!text-white">{textData[1].attributes.text}</h4>
+                                <a href="/#stay-tuned"className="flex flex-col lg:flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto">
+                                    <img src={imageData[0].attributes.url} className="w-[200px] h-[60px]"/>
+                                    <img src={imageData[1].attributes.url} className="w-[200px] h-[60px]"/>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -29,62 +34,70 @@ const Coach = (props: any) => {
 
             <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
-                    <img src={imageData.data[4].attributes.url} className="w-[240px] h-[480px]"/>
+                    <img src={imageData[2].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
                 <div className='align-middle'>
-                    <div className="heading text-left">
-                        <h2 className='max-w-[430px]'>Have your own drill database</h2>
-                        <h1 className='max-w-[430px]'>We help you build your sports training knowledge base, so that you can look back anytime without asking your coach.</h1>
+                    <div className="heading text-center lg:text-left">
+                        <h2 className='max-w-[430px] px-2 lg:px-0'>{textData[2].attributes.text}</h2>
+                        <h1 className='max-w-[430px] px-2 lg:px-0'>{textData[3].attributes.text}</h1>
                     </div>
                 </div>
             </div>
 
             <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
-                    <div className="heading">
-                        <h2 className='max-w-[450px]'>Communicate with other players</h2>
-                        <h1 className='max-w-[400px] text-left'>You can discuss with your teammates & coaches on specific drills or concepts.</h1>
+                    <div className="heading text-center lg:text-left">
+                        <h2 className='max-w-[450px] px-2 lg:px-0'>{textData[4].attributes.text}</h2>
+                        <h1 className='max-w-[400px] px-2 lg:px-0'>{textData[5].attributes.text}</h1>
                     </div>
                 </div>
                 <div className='w-[240px] h-[480px]'>
-                    <img src={imageData.data[5].attributes.url} className="w-[240px] h-[480px]"/>
+                    <img src={imageData[3].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
             </div>
 
             <div className='flex flex-col py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='w-[240px] h-[480px]'>
-                    <img src={imageData.data[0].attributes.url} className="w-[240px] h-[480px]"/>
+                    <img src={imageData[4].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
                 <div className='align-middle'>
-                    <div className="heading text-left">
-                        <h2 className='max-w-[450px]'>Show off your achievements & sports journey</h2>
-                        <h1 className='max-w-[400px]'>You can build your own sports career profile, share your progress & show off your personal highlights.</h1>
+                    <div className="heading text-center lg:text-left">
+                        <h2 className='max-w-[450px] px-2 lg:px-0'>{textData[6].attributes.text}</h2>
+                        <h1 className='max-w-[400px] px-2 lg:px-0'>{textData[7].attributes.text}</h1>
                     </div>
                 </div>
             </div>
 
             <div className='flex flex-col-reverse py-[41px] lg:py-[53px] justify-center lg:gap-[15vw] gap-[3vw] lg:flex-row items-center'>
                 <div className='align-middle'>
-                    <div className="heading text-left">
-                        <h2 className='max-w-[430px]'>Explore new sports knowledge</h2>
-                        <h1 className='max-w-[400px]'>You can get to know other coaches, explore new sports knowledge and reach out to them.</h1>
+                    <div className="heading text-center lg:text-left">
+                        <h2 className='max-w-[430px] px-2 lg:px-0'>{textData[8].attributes.text}</h2>
+                        <h1 className='max-w-[400px] px-2 lg:px-0'>{textData[9].attributes.text}</h1>
                     </div>
                 </div>
                 <div className='w-[240px] h-[480px]'>
-                    <img src={imageData.data[2].attributes.url} className="w-[240px] h-[480px]"/>
+                    <img src={imageData[5].attributes.url} className="w-[240px] h-[480px]"/>
                 </div>
             </div>
         </div>
     );
 };
 
-export async function getStaticProps() {
-    let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/thegrinds?populate=*")
+export async function getStaticProps(context: any) {
+    let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-images?populate=*")
+    let text : any;
+    if(context.locale == "en-US"){
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?_locale=en-US")
+    }else{
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?_locale=zh")
+    }
     const image_data = image.data
+    const text_data = text.data
   
     return {
       props: {
-        image_data
+        image_data,
+        text_data
       }
     }
   }
