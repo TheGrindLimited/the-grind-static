@@ -41,6 +41,16 @@ const Header = (props: any) => {
         getData()
     }, [])
 
+    let enRoute = ""
+    let zhRoute = ""
+    if(router.asPath === "/"){
+        enRoute = router.asPath + "en-US"
+        zhRoute = router.asPath + "zh"
+    }else{
+        enRoute = "/en-US" + router.asPath
+        zhRoute = "/zh" + router.asPath
+    }
+
     return (
         <header className={`sticky top-0 z-50 bg-black transition duration-300 ${props.className}`}>
             <div className="container">
@@ -114,7 +124,35 @@ const Header = (props: any) => {
                                         For Players/Young Athletes/Parents
                                     </Link>
                                 </li>
-
+                                
+                                <li className="group relative" onClick={(e) => e.stopPropagation()}>
+                                    <a
+                                        href={router.locale === "en-US" ? enRoute : zhRoute}
+                                        className={
+                                            router.pathname === enRoute
+                                                ? 'active'
+                                                : ''
+                                        }
+                                    >
+                                        {router.locale === "en-US" ? "EN" : "ZH" }
+                                        <div className="transition duration-500 group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M19 9L12 15L10.25 13.5M5 9L7.33333 11"
+                                                    stroke="currentColor"
+                                                    strokeWidth="1.5"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <div className="submenu2" onClick={() => toggleMenu()}>
+                                        <a href={router.locale === "en-US" ? zhRoute : enRoute}>
+                                            {router.locale === "en-US" ? "ZH" : "EN" }
+                                        </a>
+                                    </div>
+                                </li>
                                 {/*
                                 <li>
                                     <Link
@@ -174,6 +212,7 @@ const Header = (props: any) => {
                                 */}
 
                             </ul>
+                            
                         </div>
                         <button
                             type="button"

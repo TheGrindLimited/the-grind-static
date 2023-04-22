@@ -3,6 +3,9 @@ import { IRootState } from '../store';
 import Head from 'next/head';
 import axios from 'axios';
 import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 const Coach = (props: any) => {
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
@@ -10,9 +13,6 @@ const Coach = (props: any) => {
     const [imageData, setImageData] = useState(props.image_data.data[0].attributes.image.data)
     const [textData, setTextData] = useState(props.text_data.data)
     const [linkData, setlinkData] = useState(props.link_data.data)
-
-    console.log(linkData)
-    
     return (
         <div>
             <Head>
@@ -94,9 +94,9 @@ export async function getStaticProps(context: any) {
     let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-images?populate=*")
     let text : any;
     if(context.locale == "en-US"){
-        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?_locale=en-US")
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?sort=id&locale=en")
     }else{
-        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?_locale=zh")
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?sort=id&locale=zh")
     }
     let link = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-infos")
     const image_data = image.data
