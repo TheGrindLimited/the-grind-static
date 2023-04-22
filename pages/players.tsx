@@ -26,10 +26,10 @@ const Coach = (props: any) => {
                                 <h6>{textData[0].attributes.text}</h6>
                                 <h4 className="!text-white">{textData[1].attributes.text}</h4>
                                 <div className="flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row">
-                                    <a href={linkData[5].attributes.links}>
+                                    <a href={linkData[4].attributes.links}>
                                         <img src={imageData[0].attributes.url} className="w-[200px] h-[60px]"/>
                                     </a>
-                                    <a href={linkData[4].attributes.links}>
+                                    <a href={linkData[5].attributes.links}>
                                         <img src={imageData[1].attributes.url} className="w-[200px] h-[60px]"/>
                                     </a>
                                 </div>
