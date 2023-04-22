@@ -52,7 +52,13 @@
     header .menus .submenu {
         @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 whitespace-nowrap rounded-lg py-3 font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:text-center lg:grid lg:min-w-[280px] lg:grid-cols-1 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark;
     }
+    header .menus .submenu2 {
+        @apply invisible z-50 mt-5 hidden grid-cols-1 whitespace-nowrap rounded-lg py-3 font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:text-center lg:grid lg:min-w-[120px] lg:grid-cols-1 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark;
+    }
     .submenu {
+        @apply group-hover:visible group-hover:mt-0 group-hover:grid group-hover:opacity-100;
+    }
+    .submenu2 {
         @apply group-hover:visible group-hover:mt-0 group-hover:grid group-hover:opacity-100;
     }
     header .menus .submenu a {

@@ -5,13 +5,11 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../store';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const Index = (props: any) => {
     const [activeTab, setActiveTab] = useState<string>('all');
     const isRtl = useSelector((state: IRootState) => state.themeConfig.direction) === 'rtl' ? true : false;
-
-    console.log(props)
-
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -59,6 +57,8 @@ const Index = (props: any) => {
         setMessageSent(true);
     }
 
+    const router = useRouter();
+
     return (
         <div className="overflow-x-hidden">
             <div className="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
@@ -66,7 +66,7 @@ const Index = (props: any) => {
                     <div className="container">
                         <div className="relative text-white pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36" >
                             <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[90px] bg-gray-100 bg-opacity-100">
-                                {textData[1].attributes.text}
+                                {textData[0].attributes.text}
                             </h2>
                             <div className="flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row">
                                 <a href={linkData[5].attributes.links}>
@@ -83,8 +83,9 @@ const Index = (props: any) => {
             <section className=" py-14 dark:bg-none lg:py-[100px]">
                 <div className="container">
                     <div className="heading text-center">
-                        <h6>{textData[0].attributes.text}</h6>
+                        <h6>{textData[1].attributes.text}</h6>
                         <h4>{textData[2].attributes.text}</h4>
+                                                                        
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <Link href="players" data-aos="fade-up" data-aos-duration="1000">
@@ -428,9 +429,9 @@ const Index = (props: any) => {
 export async function getStaticProps(context : any) {
     let text: any;
     if(context.locale == "en-US"){
-        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?_locale=en-US")
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?sort=id&locale=en")
     }else{
-        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?_locale=zh")
+        text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?sort=id&locale=zh")
     }
     let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-images?populate=*")
     let link = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-infos")
