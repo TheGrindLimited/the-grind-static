@@ -93,11 +93,14 @@ const Coach = (props: any) => {
 export async function getStaticProps(context: any) {
     let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-images?populate=*")
     let text : any;
+    text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?sort=id&locale=en")
+    /*
     if(context.locale == "en-US"){
         text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?sort=id&locale=en")
     }else{
         text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-player-texts?sort=id&locale=zh")
     }
+    */
     let link = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-infos")
     const image_data = image.data
     const text_data = text.data
