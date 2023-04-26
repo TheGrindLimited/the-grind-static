@@ -453,11 +453,14 @@ const Index = (props: any) => {
 
 export async function getStaticProps(context : any) {
     let text: any;
+    text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?sort=id&locale=en")
+    /*
     if(context.locale == "en-US"){
         text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?sort=id&locale=en")
     }else{
         text = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-texts?sort=id&locale=zh")
     }
+    */
     let image = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-home-images?populate=*")
     let link = await axios.get("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/the-grind-infos")
     const image_data = image.data

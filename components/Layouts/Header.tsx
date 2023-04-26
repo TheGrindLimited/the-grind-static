@@ -125,6 +125,7 @@ const Header = (props: any) => {
                                     </Link>
                                 </li>
                                 
+                                {/*
                                 <li className="group relative" onClick={(e) => e.stopPropagation()}>
                                     <a
                                         href={router.locale === "en-US" ? enRoute : zhRoute}
@@ -153,6 +154,8 @@ const Header = (props: any) => {
                                         </a>
                                     </div>
                                 </li>
+                                */}
+
                                 {/*
                                 <li>
                                     <Link
