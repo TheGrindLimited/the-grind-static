@@ -1,0 +1,13 @@
+steps:
+  -name: []
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/the-grind-331903/the-grind-static', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/the-grind-331903/the-grind-static']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    timeout: 240s
+    args: ['run', 'deploy', 'the-grind-static', '--image', 'gcr.io/the-grind-331903/the-grind-static', '--region', 'asia-east2', '--platform', 'managed','--port', '3000']
+    images:
+      - gcr.io/the-grind-331903/the-grind-static
