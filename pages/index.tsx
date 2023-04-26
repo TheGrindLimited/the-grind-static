@@ -27,6 +27,10 @@ const Index = (props: any) => {
     const [textData, setTextData] = useState(props.text_data.data)
     const [linkData, setlinkData] = useState(props.link_data.data)
 
+    const [subEmail, setSubEmail] = useState("")
+    const [subed, setSubed] = useState(false)
+    const [subInvalidEmail, setSubInvalidEmail] = useState("")
+
     const sendEmailAPI = (e: any) => {
         if(!firstName || !lastName || !emailAddress || !message){
             setMissingInput("Missing required information.")
@@ -55,6 +59,19 @@ const Index = (props: any) => {
             }
         })
         setMessageSent(true);
+    }
+
+    const emailSubscribe = () => {
+        if (!subEmail.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+            setSubInvalidEmail("Invalid Email Address, please try again.")
+            return;
+        };
+        axios.post("https://thegrind-strapi-5x42fcw6uq-df.a.run.app/api/subscriptions", {
+            data:{
+                email: subEmail
+            }
+        })
+        setSubed(true)
     }
 
     const router = useRouter();
@@ -414,11 +431,19 @@ const Index = (props: any) => {
                                 name="message"
                                 className="w-full mr-20 rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
                                 placeholder='Email Address*'
+                                onChange={(e) => setSubEmail(e.target.value)}
                             />
-                            <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                            {
+                            subed
+                            ?
+                            <div className='text-xl py-2 text-[#46ff7e]'>Subscribed!</div>
+                            :
+                            <button type="button" className="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary" onClick={() => emailSubscribe()}>
                                 {textData[26].attributes.text}
                             </button>
+                            }
                         </form>
+                        <div className='text-lg text-[#FF5454]'>{subInvalidEmail}</div>
                     </div>
                 </div>
             </section>
