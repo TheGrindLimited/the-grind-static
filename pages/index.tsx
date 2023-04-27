@@ -86,10 +86,10 @@ const Index = (props: any) => {
                                 {textData[0].attributes.text}
                             </h2>
                             <div className="flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row">
-                                <a href={linkData[5].attributes.links}>
+                                <a href={linkData[5].attributes.links} target="_blank">
                                     <img src={imageData[1].attributes.url} className="w-[200px] h-[60px]"/>
                                 </a>
-                                <a href={linkData[4].attributes.links}>
+                                <a href={linkData[4].attributes.links} target="_blank">
                                     <img src={imageData[2].attributes.url} className="w-[200px] h-[60px]"/>
                                 </a>
                             </div>
