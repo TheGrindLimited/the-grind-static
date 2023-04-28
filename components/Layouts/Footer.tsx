@@ -153,7 +153,7 @@ const Footer = (props: any) => {
                         <div>
                             <ul className="flex flex-col gap-3 font-bold">
                                 <li className="mb-3 text-lg font-extrabold text-black dark:text-white">Information</li>
-                                <li>info@thegrind-app.com</li>
+                                <a href='mailto:info@thegrind-app.com' target="_blank">info@thegrind-app.com</a>
                                 {/*
                                 <li>
                                     <a href="tel:+(617) 254-2333" className="inline-block transition hover:scale-110 hover:text-secondary">
