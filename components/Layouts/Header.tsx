@@ -97,6 +97,7 @@ const Header = (props: any) => {
                                         }
                                     >
                                         For Coach/School
+                                        {/*the following is cursor animation*/}
                                         <div className="transition duration-500 group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -123,6 +124,39 @@ const Header = (props: any) => {
                                     <Link href="/players" className={router.pathname === '/players' ? 'active' : ''}>
                                         For Players/Young Athletes/Parents
                                     </Link>
+                                </li>
+
+                                <li className="group relative" onClick={(e) => e.stopPropagation()}>
+                                    <Link
+                                        href="#"
+                                        className={
+                                            router.pathname === '/lang'
+                                                ? 'active'
+                                                : ''
+                                        }
+                                    >
+                                        Lang
+                                        <div className="transition duration-500 group-hover:rotate-180 ltr:ml-2 rtl:mr-2">
+                                            {/*the following is cursor animation*/}
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M19 9L12 15L10.25 13.5M5 9L7.33333 11"
+                                                    stroke="currentColor"
+                                                    strokeWidth="1.5"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </Link>
+                                    <div className="submenu" onClick={() => toggleMenu()}>
+                                        <Link href="/" className={router.pathname === '/chinese' ? 'active' : ''}> {/*wrong linking now */}
+                                            中文
+                                        </Link>
+                                        <Link href="/" className={router.pathname === '/english' ? 'active' : ''}> {/*wrong linking now */}
+                                            Eng
+                                        </Link>
+                                    </div>
                                 </li>
                                 
                                 {/*
