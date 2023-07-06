@@ -57,7 +57,7 @@ const Header = (props: any) => {
                 <div className="flex items-center justify-between py-1 lg:py-0">
                     <Link href="/" className='flex flex-col gap-1'>
                         {imageData ?
-                            <img src={imageData.data[0].attributes.image.data[0].attributes.url} className="w-[100px] h-[90px]"/>
+                            <img src={imageData.data[0].attributes.image.data[0].attributes.url} className="w-[100px] h-[90px] mt-4"/>
                             :
                             <>
                                 <div className="text-white text-xl font-bold">THE GRIND</div><div className='text-white text-sm'>NEVER STOPS</div>
