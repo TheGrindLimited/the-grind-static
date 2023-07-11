@@ -102,8 +102,41 @@ const Index = (props: any) => {
                     <div className="heading text-center">
                         <h6>{textData[1].attributes.text}</h6>
                         <h4>{textData[2].attributes.text}</h4>
+                        <h4>A community platform for all sports!</h4>
                                                                         
                     </div>
+
+                    {/*test*/}
+                    <div className="container">
+                        <div className='flex'>
+                            <div>
+                            {/* put a large image in left handside */}
+                            <img src={imageData[2].attributes.url} className="w-[500px] h-[700px]"/>
+                            </div> 
+                            <div className='max-w-[50%]'>
+                                {/* put text or description in right handside */}
+                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[100px] text-black bg-gray-100 bg-opacity-100"> 
+                                    What can it do?
+                                </h2>
+                                <p>
+                                    <h6 className='mb-[30px]'>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod, ultrices neque vitae, convallis arcu. Sed vulputate, risus a lacinia varius, nisl enim tincidunt urna, eget ullamcorper risus lacus at ipsum. Vivamus at metus in massa cursus aliquam. Nunc eleifend efficitur lorem, vel interdum metus vestibulum id. Ut id fringilla lectus, eu semper turpis. Fusce ut est nec risus tempus lobortis.
+                                    </h6>
+
+                                    <h6>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod, ultrices neque vitae, convallis arcu. Sed vulputate, risus a lacinia varius, nisl enim tincidunt urna, eget ullamcorper risus lacus at ipsum. Vivamus at metus in massa cursus aliquam. Nunc eleifend efficitur lorem, vel interdum metus vestibulum id. Ut id fringilla lectus, eu semper turpis. Fusce ut est nec risus tempus lobortis.
+                                    </h6>
+                                </p>
+                            </div>
+                        
+                        </div>
+                        
+                        
+                    </div>     
+
+                    {/*test*/}
+
+                    {/*the following is grid of the homepages -> Digitization, Recognition, Community*/}
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <Link href="players" data-aos="fade-up" data-aos-duration="1000">
                             <div
