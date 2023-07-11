@@ -110,48 +110,39 @@ const Index = (props: any) => {
                     <div className="container">
                         <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row'>
                             <div>
-                            {/* put a large image in left handside */}
-                            <img src={imageData[2].attributes.url} className="w-[500px] h-[700px]"/>
+                                {/* put a large image in left handside */}
+                                <img src={imageData[2].attributes.url} className="w-[500px] h-[700px]"/>
                             </div> 
                             <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col max-w-[50%] '>
                                 {/* put text or description in right handside */}
                                 <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[100px] text-black bg-gray-100 bg-opacity-100"> 
                                     What can it do?
                                 </h2>
-                                <p>
                                     <h6 className='mb-[2%]'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod, ultrices neque vitae, convallis arcu. Sed vulputate, risus a lacinia varius, nisl enim tincidunt urna, eget ullamcorper risus lacus at ipsum. Vivamus at metus in massa cursus aliquam. Nunc eleifend efficitur lorem, vel interdum metus vestibulum id. Ut id fringilla lectus, eu semper turpis. Fusce ut est nec risus tempus lobortis.
                                     </h6>
-
                                     <h6>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod, ultrices neque vitae, convallis arcu. Sed vulputate, risus a lacinia varius, nisl enim tincidunt urna, eget ullamcorper risus lacus at ipsum. Vivamus at metus in massa cursus aliquam. Nunc eleifend efficitur lorem, vel interdum metus vestibulum id. Ut id fringilla lectus, eu semper turpis. Fusce ut est nec risus tempus lobortis.
                                     </h6>
-                                </p>
                                 <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
                                     {/* place description below*/}
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                         <img src={imageData[2].attributes.url} className=" w-[50px] h-[50px] mr-[15px]"/>
-                                        <p>
                                             <h6>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
                                             </h6>
-                                        </p>
                                     </div>
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                         <img src={imageData[2].attributes.url} className=" w-[50px] h-[50px] mr-[15px]"/>
-                                        <p>
                                             <h6>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
                                             </h6>
-                                        </p>
                                     </div>
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                         <img src={imageData[2].attributes.url} className=" w-[50px] h-[50px] mr-[15px]"/>
-                                        <p>
                                             <h6>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
                                             </h6>
-                                        </p>
                                     </div>  
                                 
 
