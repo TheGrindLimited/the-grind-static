@@ -107,6 +107,7 @@ const Index = (props: any) => {
                     </div>
 
                     {/*test*/}
+                    {/*What* can it do*/}
                     <div className="container">
                         <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row'>
                             <div>
@@ -115,7 +116,7 @@ const Index = (props: any) => {
                             </div> 
                             <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col max-w-[50%] '>
                                 {/* put text or description in right handside */}
-                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[100px] text-black bg-gray-100 bg-opacity-100"> 
+                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
                                     What can it do?
                                 </h2>
                                     <h6 className='mb-[2%]'>
@@ -127,32 +128,44 @@ const Index = (props: any) => {
                                 <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
                                     {/* place description below*/}
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                        <img src={imageData[2].attributes.url} className=" w-[50px] h-[50px] mr-[15px]"/>
+                                        <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>
                                             <h6>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
                                             </h6>
                                     </div>
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                        <img src={imageData[2].attributes.url} className=" w-[50px] h-[50px] mr-[15px]"/>
+                                        <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>
                                             <h6>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
                                             </h6>
                                     </div>
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                        <img src={imageData[2].attributes.url} className=" w-[50px] h-[50px] mr-[15px]"/>
+                                        <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>
                                             <h6>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
                                             </h6>
-                                    </div>  
-                                
-
+                                    </div>                            
                                 </div>
                             </div>
-                        
-                        </div>
-                        
-                        
+                        </div>                    
                     </div>     
+
+                    <div className='container'>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row'>
+                            <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
+                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
+                                        How it works?
+                                </h2>
+                                <h5 className="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
+                                    Activity & Event App
+                                </h5>
+                                <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
+                                    Track progression & activities for players, coaches & clubs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
 
                     {/*test*/}
 
