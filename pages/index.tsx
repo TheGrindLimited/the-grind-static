@@ -109,22 +109,20 @@ const Index = (props: any) => {
                     {/*test*/}
                     {/*What* can it do*/}
                     <div className="container">
-                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row'>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                             <div>
                                 {/* put a large image in left handside */}
-                                <img src={imageData[2].attributes.url} className="w-[500px] h-[700px]"/>
+                                <img src={imageData[2].attributes.url} className="w-full"/>
                             </div> 
-                            <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col max-w-[50%] '>
+                            <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col lg:max-w-[50%] sm:w-fit '>
                                 {/* put text or description in right handside */}
                                 <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
                                     What can it do?
                                 </h2>
                                     <h6 className='mb-[2%]'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod, ultrices neque vitae, convallis arcu. Sed vulputate, risus a lacinia varius, nisl enim tincidunt urna, eget ullamcorper risus lacus at ipsum. Vivamus at metus in massa cursus aliquam. Nunc eleifend efficitur lorem, vel interdum metus vestibulum id. Ut id fringilla lectus, eu semper turpis. Fusce ut est nec risus tempus lobortis.
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     </h6>
-                                    <h6>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod, ultrices neque vitae, convallis arcu. Sed vulputate, risus a lacinia varius, nisl enim tincidunt urna, eget ullamcorper risus lacus at ipsum. Vivamus at metus in massa cursus aliquam. Nunc eleifend efficitur lorem, vel interdum metus vestibulum id. Ut id fringilla lectus, eu semper turpis. Fusce ut est nec risus tempus lobortis.
-                                    </h6>
+                                    
                                 <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
                                     {/* place description below*/}
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
@@ -151,17 +149,26 @@ const Index = (props: any) => {
                     </div>     
 
                     <div className='container'>
-                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row'>
-                            <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
-                                <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
-                                        How it works?
-                                </h2>
-                                <h5 className="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
-                                    Activity & Event App
-                                </h5>
-                                <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                    Track progression & activities for players, coaches & clubs
-                                </p>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                            <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
+                                    <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
+                                            How it works?
+                                    </h2>
+                                    <h5 className="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
+                                        Activity & Event App
+                                    </h5>
+                                    <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
+                                        Track progression & activities for players, coaches & clubs
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='flex flex-col mx-auto gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                    {/* put a four image in right handside */}
+                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
+                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
+                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
+                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
                             </div>
                         </div>
                     </div>
