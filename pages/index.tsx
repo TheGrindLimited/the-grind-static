@@ -235,6 +235,10 @@ const Index = (props: any) => {
                         </div>
                     </div>
 
+                    {/* BlogSlider */}
+                    
+                    
+                    
                     {/* above test*/}
 
                     {/*the following is grid of the homepages -> Digitization, Recognition, Community*/}
