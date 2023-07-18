@@ -172,8 +172,8 @@ const Index = (props: any) => {
                                         <img src={imageData[2].attributes.url} className="w-[80px] h-[80px] mt-5"/>
                                 </div> 
                             </div>
-                            <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
+                            <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                <div className='flex flex-row mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
                                         <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                             <div>
                                                 {/* put a large image in left handside */}
@@ -181,7 +181,7 @@ const Index = (props: any) => {
                                             </div> 
                                         </div>
                                 </div>
-                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
+                                <div className='flex flex-row mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
                                         <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                             <div>
                                                 {/* put a large image in left handside */}
@@ -189,7 +189,7 @@ const Index = (props: any) => {
                                             </div> 
                                         </div>
                                 </div>
-                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
+                                <div className='flex flex-row mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
                                         <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                             <div>
                                                 {/* put a large image in left handside */}
@@ -197,6 +197,16 @@ const Index = (props: any) => {
                                             </div> 
                                         </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='container'>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                            <div>
+                                <h2 className='flex-row justify-center'>
+                                    Who is it for?
+                                </h2>
                             </div>
                         </div>
                     </div>
