@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import { IRootState } from '../store';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import BlogSlider from '../components/BlogSlider'
+
 
 const Index = (props: any) => {
     const [activeTab, setActiveTab] = useState<string>('all');
@@ -119,29 +121,29 @@ const Index = (props: any) => {
                                 <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
                                     What can it do?
                                 </h2>
-                                    <h6 className='mb-[2%]'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    </h6>
+                                <h6 className='mb-[2%]'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                </h6>
                                     
                                 <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
                                     {/* place description below*/}
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                        <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>
-                                            <h6>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
-                                            </h6>
+                                        <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>                                        
+                                        <h6>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
+                                        </h6>
                                     </div>
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                         <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>
-                                            <h6>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
-                                            </h6>
+                                        <h6>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
+                                        </h6>
                                     </div>
                                     <div className='flex flex-row mx-auto w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                         <img src={imageData[2].attributes.url} className=" w-[60px] h-[60px] mr-[15px]"/>
-                                            <h6>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
-                                            </h6>
+                                        <h6>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem euismod
+                                        </h6>
                                     </div>                            
                                 </div>
                             </div>
@@ -174,45 +176,66 @@ const Index = (props: any) => {
                             </div>
                             <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                 <div className='flex flex-row mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
-                                        <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                            <div>
-                                                {/* put a large image in left handside */}
-                                                <img src={imageData[2].attributes.url} className="w-full"/>
-                                            </div> 
-                                        </div>
+                                    <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                        <div>
+                                            {/* put a image */}
+                                            <img src={imageData[2].attributes.url} className="w-full"/>
+                                        </div> 
+                                    </div>
                                 </div>
                                 <div className='flex flex-row mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
-                                        <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                            <div>
-                                                {/* put a large image in left handside */}
-                                                <img src={imageData[2].attributes.url} className="w-full"/>
-                                            </div> 
-                                        </div>
+                                    <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                        <div>
+                                            {/* put a image */}
+                                            <img src={imageData[2].attributes.url} className="w-full"/>
+                                        </div> 
+                                    </div>
                                 </div>
                                 <div className='flex flex-row mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
-                                        <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                            <div>
-                                                {/* put a large image in left handside */}
-                                                <img src={imageData[2].attributes.url} className="w-full"/>
-                                            </div> 
-                                        </div>
+                                    <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                        <div>
+                                            {/* put a image */}
+                                            <img src={imageData[2].attributes.url} className="w-full"/>
+                                        </div> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className='container'>
-                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:rtl:ml-auto lg:flex-row '>
                             <div>
-                                <h2 className='flex-row justify-center'>
+                                {/* textbox section->who is it for */}
+                                <h2 className="text-center text-4xl font-extrabold my-5 leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100">
                                     Who is it for?
                                 </h2>
+                                <h5 className="text-center text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
+                                        We bring solutions to make life easier for our customers
+                                </h5>
+                            </div>
+                            <div>
+                                {/* place two big image here, for coaches/players, can use back the orginal one */}
                             </div>
                         </div>
                     </div>
 
+                    {/* collaboration part */}
+                    <div className='container'>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:rtl:ml-auto lg:flex-row '>
+                            <div>
+                                {/* textbox section->who is it for */}
+                                <h2 className="text-center text-4xl font-extrabold my-6 leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100">
+                                    Collaboration
+                                </h2>
+                                <h5 className="text-center text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
+                                    We are supported by
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
 
-                    {/*test*/}
+                    {/* above test*/}
 
                     {/*the following is grid of the homepages -> Digitization, Recognition, Community*/}
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
