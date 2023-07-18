@@ -149,26 +149,54 @@ const Index = (props: any) => {
                     </div>     
 
                     <div className='container'>
-                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                            <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
-                                    <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
-                                            How it works?
-                                    </h2>
-                                    <h5 className="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
-                                        Activity & Event App
-                                    </h5>
-                                    <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
-                                        Track progression & activities for players, coaches & clubs
-                                    </p>
+                        <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
+                            <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                    <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
+                                        <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
+                                                How it works?
+                                        </h2>
+                                        <h5 className="text-2xl font-extrabold leading-normal sm:text-3xl lg:text-[32px] lg:leading-[80px] text-black bg-gray-100 bg-opacity-100">
+                                            Activity & Event App
+                                        </h5>
+                                        <p className="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
+                                            Track progression & activities for players, coaches & clubs
+                                        </p>
+                                    </div>
                                 </div>
+                                <div className='flex flex-col mx-auto gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                        {/* put a four image in right handside */}
+                                        <img src={imageData[2].attributes.url} className="w-[80px] h-[80px] mt-5"/>
+                                        <img src={imageData[2].attributes.url} className="w-[80px] h-[80px] mt-5"/>
+                                        <img src={imageData[2].attributes.url} className="w-[80px] h-[80px] mt-5"/>
+                                        <img src={imageData[2].attributes.url} className="w-[80px] h-[80px] mt-5"/>
+                                </div> 
                             </div>
-                            <div className='flex flex-col mx-auto gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
-                                    {/* put a four image in right handside */}
-                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
-                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
-                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
-                                    <img src={imageData[2].attributes.url} className="w-[80px] h-[80px]"/>
+                            <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
+                                        <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                            <div>
+                                                {/* put a large image in left handside */}
+                                                <img src={imageData[2].attributes.url} className="w-full"/>
+                                            </div> 
+                                        </div>
+                                </div>
+                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
+                                        <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                            <div>
+                                                {/* put a large image in left handside */}
+                                                <img src={imageData[2].attributes.url} className="w-full"/>
+                                            </div> 
+                                        </div>
+                                </div>
+                                <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row lg:max-w-[1/3] '>
+                                        <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                                            <div>
+                                                {/* put a large image in left handside */}
+                                                <img src={imageData[2].attributes.url} className="w-full"/>
+                                            </div> 
+                                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>
