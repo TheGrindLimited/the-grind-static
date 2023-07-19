@@ -152,7 +152,7 @@ const Index = (props: any) => {
 
                     <div className='container'>
                         <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
-                            <div className='flex flex-col mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
+                            <div className='flex flex-col mx-auto gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                 <div className='flex flex-row mx-auto my-12 gap-8 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-row '>
                                     <div className='flex flex-col mx-auto my-2 gap-5 w-fit lg:mx-0 lg:rtl:ml-auto lg:flex-col '>
                                         <h2 className="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[64px] lg:leading-[10px] text-black bg-gray-100 bg-opacity-100"> 
@@ -235,7 +235,9 @@ const Index = (props: any) => {
                         </div>
                     </div>
 
-                    {/* BlogSlider */}
+
+                    {/* later can use this for blog */}
+                    <BlogSlider />
 
                     
                     
