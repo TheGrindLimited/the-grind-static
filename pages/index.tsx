@@ -236,7 +236,7 @@ const Index = (props: any) => {
                     </div>
 
                     {/* BlogSlider */}
-                    
+
                     
                     
                     {/* above test*/}
